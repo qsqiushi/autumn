@@ -16,6 +16,8 @@
         <module>autumn-netty-websocket-client</module>
         <module>autumn-netty-websocket-server</module>
         <module>autumn-utils</module>
+        <module>autumn-gateway</module>
+        <module>autumn-model</module>
     </modules>
 
     <name>autumn</name>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.autumn.gateway.mapper.ResourceConfigMapper">
+
+
+    <resultMap id="BaseResultMap" type="com.autumn.gateway.po.ResourceConfigInfo">
+        <id column="ID" jdbcType="BIGINT" property="id"/>
+        <result column="CREATE_BY" jdbcType="BIGINT" property="createBy"/>
+        <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="UPDATE_BY" jdbcType="BIGINT" property="updateBy"/>
+        <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="DELETED" jdbcType="TINYINT" property="deleted"/>
+        <result column="REMARK" jdbcType="VARCHAR" property="remark"/>
+        <result column="VERSION" jdbcType="INTEGER" property="version"/>
+        <result column="STATUS" jdbcType="TINYINT" property="status"/>
+        <result column="CONFIG_ID" jdbcType="BIGINT" property="configId"/>
+        <result column="RESOURCE_ID" jdbcType="BIGINT" property="resourceId"/>
+        <association property="config" column="CONFIG_ID" select="com.autumn.gateway.mapper.ConfigMapper.selectById"/>
+    </resultMap>
+
+    <select id="selectResourceConfigInfo" resultMap="BaseResultMap">
+        SELECT
+         *
+        FROM
+        resource_config
+       ${ew.customSqlSegment}
+    </select>
+
+
+</mapper>

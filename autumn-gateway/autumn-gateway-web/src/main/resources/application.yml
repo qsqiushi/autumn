@@ -1,0 +1,158 @@
+server:
+  port: 8789
+spring:
+  profiles:
+    active: test
+  application:
+    name: autumn-gateway
+  boot:
+    admin:
+      client:
+        #springboot admin client连接 spring boot admin server 端点地址springboot admin client连接 spring boot admin server 端点地址
+        url: http://172.16.0.59:8788
+        instance:
+          #默认使用的是主机名注册，改为使用ip注册
+          prefer-ip: true
+  redis:
+    ssl: false
+    host: 172.16.0.47
+    port: 6380
+    password: UkpMEznstss34
+    database: 8
+    timeout: 5000ms
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: -1
+        min-idle: 0
+  datasource:
+    username: rdsroot
+    password: Dataearth2018
+    url: jdbc:mysql://pro.rdsmajl7aar4fdc.rds.bd.baidubce.com:3306/api_gateway?useUnicode=true&useSSL=false&characterEncoding=utf8
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: nacos-test.airlook.com:80
+        namespace: 53b92db0-0844-4e5c-866a-904a20b2e462
+    sentinel:
+      transport:
+        #dashboard: 172.16.0.59:8080
+        dashboard: localhost:8080
+      eager: true
+    gateway:
+      discovery:
+        locator:
+          #开启从注册中心动态创建路由的功能
+          enabled: true
+          #使用小写服务名，默认是大写
+          lower-case-service-id: true
+#hystrix.command.fallbackcmd.execution.isolation.thread.timeoutInMilliseconds: 5000
+management:
+  endpoints:
+    web:
+      exposure:
+        #开放所有页面节点  默认只开启了health、info两个节点
+        include: '*'
+  endpoint:
+    health:
+      #显示健康具体信息  默认不会显示详细信息
+      show-details: always
+# 利用info端点，加入版本等信息
+info:
+  versin: @project.version@
+  name: @project.artifactId@
+  group: @project.groupId@
+  description: 统一网关
+  #  @project.description@
+  #还可以自定义信息
+  author: qiushi
+  blog: https://dataearth.airlook.com
+autumn:
+  component:
+    basePackage: com.autumn
+mybatis-plus:
+  configuration:
+    cacheEnabled: false
+    mapUnderscoreToCamelCase: true
+  global-config:
+    db-config:
+      column-underline: true
+      field-strategy: not_empty
+      id-type: id_worker
+      logic-delete-value: true
+    refresh: true
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  typeAliasesPackage: com.autumn.*.entity
+  type-enums-package: com.autumn.*.enums
+# log
+logging:
+  config: classpath:log4j2-spring.xml
+  level:
+    com:
+      alibaba:
+        nacos:
+          client:
+            naming: error
+ribbon:
+  MaxAutoRetries: 1 #最大重试次数，当注册中心中可以找到服务，但是服务连不上时将会重试
+  MaxAutoRetriesNextServer: 1 #切换实例的重试次数
+  OkToRetryOnAllOperations: false # 对所有的操作请求都进行重试，如果是get则可以，如果是post,put等操作没有实现幂等的情况下是很危险的，所以设置为false
+  ConnectTimeout: 500 #请求连接的超时时间
+  ReadTimeout: 1000 #请求处理的超时时间
+feign:
+  #解决网关和feign-httpclient的冲突
+  compression:
+    response:
+      enabled: true
+  #feign get请求配置
+  httpclient:
+    enabled: true
+  client:
+    config:
+      default:
+        connect-timeout: 1000
+        read-timeout: 5000
+hystrix:
+  threadpool:
+    default:
+      #并发执行的最大线程数，默认10
+      coreSize: 200
+      #BlockingQueue的最大队列数，默认值-1
+      maxQueueSize: 1000
+      #即使maxQueueSize没有达到，达到queueSizeRejectionThreshold该值后，请求也会被拒绝，默认值5
+      queueSizeRejectionThreshold: 800
+      maximumSize: 300
+    fallbackcmdpool:
+      coreSize: 200
+      maxQueueSize: 1000
+      queueSizeRejectionThreshold: 800
+      maximumSize: 300
+  command:
+    fallbackcmd:
+      fallback:
+        isolation:
+          semaphore:
+            maxConcurrentRequests: 200
+      threadPoolKeyOverride: fallbackcmdpool
+      execution:
+        isolation:
+          semaphore:
+            maxConcurrentRequests: 200
+          thread:
+            timeoutInMilliseconds: 130000
+    default:
+      circuitBreaker:
+        requestVolumeThreshold: 1000
+      fallback:
+        isolation:
+          semaphore:
+            maxConcurrentRequests: 200
+      execution:
+        isolation:
+          semaphore:
+            maxConcurrentRequests: 200
+          thread:
+            timeoutInMilliseconds: 130000
