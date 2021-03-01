@@ -10,7 +10,7 @@ import java.util.Set;
  * redis接口
  *
  * @author qius
- * @author guoxin
+ * @author Aysn
  * @since 2019-03-13 18:02
  */
 public interface RedisService<T> {

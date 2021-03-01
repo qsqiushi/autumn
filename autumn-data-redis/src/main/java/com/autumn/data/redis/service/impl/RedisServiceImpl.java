@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
  * 调用lua 脚本
  *
  * @author qius
- * @author guoxin
+ * @author Aysn
  * @since 2019-03-27
  */
 @Slf4j

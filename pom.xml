@@ -15,6 +15,7 @@
         <module>autumn-data-redis</module>
         <module>autumn-netty-websocket-client</module>
         <module>autumn-netty-websocket-server</module>
+        <module>autumn-utils</module>
     </modules>
 
     <name>autumn</name>
