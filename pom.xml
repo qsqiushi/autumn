@@ -12,6 +12,9 @@
         <module>autumn-data-mongo</module>
         <module>autumn-core</module>
         <module>autumn-data-mybatis-plus</module>
+        <module>autumn-data-redis</module>
+        <module>autumn-netty-websocket-client</module>
+        <module>autumn-netty-websocket-server</module>
     </modules>
 
     <name>autumn</name>
