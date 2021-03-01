@@ -11,6 +11,7 @@
         <module>autumn-api-sign</module>
         <module>autumn-data-mongo</module>
         <module>autumn-core</module>
+        <module>autumn-data-mybatis-plus</module>
     </modules>
 
     <name>autumn</name>
