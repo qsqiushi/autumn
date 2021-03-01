@@ -45,6 +45,22 @@ public class MybatisGenerator {
     this.tables = tables;
   }
 
+  public static void main(String[] args) {
+    new MybatisGenerator(
+            "com.airlook.passport",
+            "root",
+            "pro.rdsmajl7aar4fdc.rds.bd.baidubce.com",
+            "root",
+            "test",
+            "root",
+            "resource",
+            "resource_role_relation",
+            "role",
+            "user",
+            "user_role_relation")
+        .gen();
+  }
+
   /** RUN THIS */
   public void gen() {
     // 代码生成器
@@ -121,21 +137,5 @@ public class MybatisGenerator {
     // 选择 freemarker 引擎需要指定如下加，注意 pom 依赖必须有！
     mpg.setTemplateEngine(new FreemarkerTemplateEngine());
     mpg.execute();
-  }
-
-  public static void main(String[] args) {
-    new MybatisGenerator(
-            "com.airlook.passport",
-            "root",
-            "pro.rdsmajl7aar4fdc.rds.bd.baidubce.com",
-            "root",
-            "test",
-            "root",
-            "resource",
-            "resource_role_relation",
-            "role",
-            "user",
-            "user_role_relation")
-        .gen();
   }
 }

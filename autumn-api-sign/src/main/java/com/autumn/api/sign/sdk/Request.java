@@ -13,43 +13,43 @@ import java.util.List;
 import java.util.Map;
 
 public interface Request<T> {
-    void addHeader(String var1, String var2);
+  void addHeader(String var1, String var2);
 
-    Map<String, String> getHeaders();
+  Map<String, String> getHeaders();
 
-    void setHeaders(Map<String, String> var1);
+  void setHeaders(Map<String, String> var1);
 
-    void setResourcePath(String var1);
+  String getResourcePath();
 
-    String getResourcePath();
+  void setResourcePath(String var1);
 
-    void addParameter(String var1, String var2);
+  void addParameter(String var1, String var2);
 
-    void addParameters(String var1, List<String> var2);
+  void addParameters(String var1, List<String> var2);
 
-    Request<T> withParameter(String var1, String var2);
+  Request<T> withParameter(String var1, String var2);
 
-    Map<String, List<String>> getParameters();
+  Map<String, List<String>> getParameters();
 
-    void setParameters(Map<String, List<String>> var1);
+  void setParameters(Map<String, List<String>> var1);
 
-    URI getEndpoint();
+  URI getEndpoint();
 
-    void setEndpoint(URI var1);
+  void setEndpoint(URI var1);
 
-    HttpMethodName getHttpMethod();
+  HttpMethodName getHttpMethod();
 
-    void setHttpMethod(HttpMethodName var1);
+  void setHttpMethod(HttpMethodName var1);
 
-    InputStream getContent();
+  InputStream getContent();
 
-    void setContent(InputStream var1);
+  void setContent(InputStream var1);
 
-    WebServiceRequest getOriginalRequest();
+  WebServiceRequest getOriginalRequest();
 
-    int getTimeOffset();
+  int getTimeOffset();
 
-    void setTimeOffset(int var1);
+  void setTimeOffset(int var1);
 
-    Request<T> withTimeOffset(int var1);
+  Request<T> withTimeOffset(int var1);
 }

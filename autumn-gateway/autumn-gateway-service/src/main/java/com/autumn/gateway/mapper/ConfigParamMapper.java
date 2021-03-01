@@ -5,14 +5,10 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
- * <p>
- *  Mapper 接口
- * </p>
+ * Mapper 接口
  *
  * @author 自动生成
  * @since 2021-01-07
  */
 @Mapper
-public interface ConfigParamMapper extends BaseMapper<ConfigParam> {
-
-}
+public interface ConfigParamMapper extends BaseMapper<ConfigParam> {}

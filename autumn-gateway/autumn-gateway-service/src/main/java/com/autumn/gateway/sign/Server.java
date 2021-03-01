@@ -181,6 +181,20 @@ public class Server {
     }
   }
 
+  private static String resolveBodyFromRequest(ServerHttpRequest serverHttpRequest) {
+    Flux<DataBuffer> body = serverHttpRequest.getBody();
+    StringBuilder sb = new StringBuilder();
+    body.subscribe(
+        (buffer) -> {
+          byte[] bytes = new byte[buffer.readableByteCount()];
+          buffer.read(bytes);
+          DataBufferUtils.release(buffer);
+          String bodyString = new String(bytes, StandardCharsets.UTF_8);
+          sb.append(bodyString);
+        });
+    return sb.toString();
+  }
+
   private String resolveBodyFromRequest2(ServerHttpRequest serverHttpRequest) {
     Flux<DataBuffer> body = serverHttpRequest.getBody();
     AtomicReference<String> bodyRef = new AtomicReference();
@@ -200,19 +214,5 @@ public class Server {
     DataBuffer buffer = nettyDataBufferFactory.allocateBuffer(bytes.length);
     buffer.write(bytes);
     return buffer;
-  }
-
-  private static String resolveBodyFromRequest(ServerHttpRequest serverHttpRequest) {
-    Flux<DataBuffer> body = serverHttpRequest.getBody();
-    StringBuilder sb = new StringBuilder();
-    body.subscribe(
-        (buffer) -> {
-          byte[] bytes = new byte[buffer.readableByteCount()];
-          buffer.read(bytes);
-          DataBufferUtils.release(buffer);
-          String bodyString = new String(bytes, StandardCharsets.UTF_8);
-          sb.append(bodyString);
-        });
-    return sb.toString();
   }
 }

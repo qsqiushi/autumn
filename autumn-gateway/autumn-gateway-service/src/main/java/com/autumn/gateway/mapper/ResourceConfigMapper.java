@@ -11,9 +11,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * <p>
  * Mapper 接口
- * </p>
  *
  * @author 自动生成
  * @since 2021-01-07
@@ -21,15 +19,15 @@ import java.util.List;
 @Mapper
 public interface ResourceConfigMapper extends BaseMapper<ResourceConfig> {
 
-    /**
-     * <查询资源配置>
-     *
-     * @param queryWrapper
-     * @return : java.util.List<com.airlook.gateway.po.ResourceConfigInfo>
-     * @author qius
-     * @updator qius
-     * @since 2021/1/7 17:25
-     */
-    List<ResourceConfigInfo> selectResourceConfigInfo(@Param(Constants.WRAPPER) Wrapper<ResourceConfig> queryWrapper);
-
+  /**
+   * <查询资源配置>
+   *
+   * @param queryWrapper
+   * @return : java.util.List<com.airlook.gateway.po.ResourceConfigInfo>
+   * @author qius
+   * @updator qius
+   * @since 2021/1/7 17:25
+   */
+  List<ResourceConfigInfo> selectResourceConfigInfo(
+      @Param(Constants.WRAPPER) Wrapper<ResourceConfig> queryWrapper);
 }

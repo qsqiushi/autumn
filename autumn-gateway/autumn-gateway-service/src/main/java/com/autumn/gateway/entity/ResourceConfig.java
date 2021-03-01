@@ -6,10 +6,6 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 /**
- * <p>
- *
- * </p>
- *
  * @author 自动生成
  * @since 2021-01-07
  */
@@ -18,14 +14,11 @@ import lombok.experimental.Accessors;
 @EqualsAndHashCode(callSuper = false)
 public class ResourceConfig extends BasePO {
 
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
+  @TableField("CONFIG_ID")
+  private String configId;
 
-    @TableField("CONFIG_ID")
-    private String configId;
-
-    @TableField("RESOURCE_ID")
-    private String resourceId;
-
-
+  @TableField("RESOURCE_ID")
+  private String resourceId;
 }

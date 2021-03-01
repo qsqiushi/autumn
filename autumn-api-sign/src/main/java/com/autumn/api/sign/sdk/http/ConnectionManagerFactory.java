@@ -12,13 +12,17 @@ import org.apache.http.impl.conn.SchemeRegistryFactory;
 import java.util.concurrent.TimeUnit;
 
 class ConnectionManagerFactory {
-    ConnectionManagerFactory() {}
+  ConnectionManagerFactory() {}
 
-    public static PoolingClientConnectionManager createPoolingClientConnManager(ClientConfiguration config) {
-        PoolingClientConnectionManager connectionManager = new PoolingClientConnectionManager(
-            SchemeRegistryFactory.createDefault(), config.getConnectionTTL(), TimeUnit.MILLISECONDS);
-        connectionManager.setDefaultMaxPerRoute(config.getMaxConnections());
-        connectionManager.setMaxTotal(config.getMaxConnections());
-        return connectionManager;
-    }
+  public static PoolingClientConnectionManager createPoolingClientConnManager(
+      ClientConfiguration config) {
+    PoolingClientConnectionManager connectionManager =
+        new PoolingClientConnectionManager(
+            SchemeRegistryFactory.createDefault(),
+            config.getConnectionTTL(),
+            TimeUnit.MILLISECONDS);
+    connectionManager.setDefaultMaxPerRoute(config.getMaxConnections());
+    connectionManager.setMaxTotal(config.getMaxConnections());
+    return connectionManager;
+  }
 }

@@ -43,32 +43,27 @@ import java.util.List;
 @Slf4j
 public class AuthenticationGatewayFilterFactory
     extends AbstractGatewayFilterFactory<AuthenticationGatewayFilterFactory.Config> {
+  private static final String FIELD = "field";
+  private static final String URL = "url";
+  private static final String TYPE = "type";
+  private static final String ROLES = "roles";
+  private static final String TYPE_HEADER = "header";
+  private static final String TYPE_COOKIE = "cookie";
+
   static {
     log.info("this is AuthenticationGatewayFilterFactory ");
   }
 
   private HttpClientBuilder httpClientBuilder;
 
+  public AuthenticationGatewayFilterFactory() {
+    super(Config.class);
+  }
+
   public AuthenticationGatewayFilterFactory setHttpClientBuilder(
       HttpClientBuilder httpClientBuilder) {
     this.httpClientBuilder = httpClientBuilder;
     return this;
-  }
-
-  private static final String FIELD = "field";
-
-  private static final String URL = "url";
-
-  private static final String TYPE = "type";
-
-  private static final String ROLES = "roles";
-
-  private static final String TYPE_HEADER = "header";
-
-  private static final String TYPE_COOKIE = "cookie";
-
-  public AuthenticationGatewayFilterFactory() {
-    super(Config.class);
   }
 
   @Override
@@ -175,18 +170,6 @@ public class AuthenticationGatewayFilterFactory
     return Arrays.asList(URL, FIELD, TYPE, ROLES);
   }
 
-  @Validated
-  @Data
-  @NoArgsConstructor
-  @EqualsAndHashCode(callSuper = false)
-  @Accessors(chain = true)
-  public static class Config {
-    private String field;
-    private String url;
-    private String type;
-    private List<String> roles;
-  }
-
   public String getToken(ServerWebExchange exchange, Config config) {
 
     if (StringUtils.equals(config.getType(), TYPE_HEADER)) {
@@ -216,5 +199,17 @@ public class AuthenticationGatewayFilterFactory
   public String getTokenFromHeader(ServerWebExchange exchange, String field) {
     HttpHeaders headers = exchange.getRequest().getHeaders();
     return headers.getFirst(field);
+  }
+
+  @Validated
+  @Data
+  @NoArgsConstructor
+  @EqualsAndHashCode(callSuper = false)
+  @Accessors(chain = true)
+  public static class Config {
+    private String field;
+    private String url;
+    private String type;
+    private List<String> roles;
   }
 }

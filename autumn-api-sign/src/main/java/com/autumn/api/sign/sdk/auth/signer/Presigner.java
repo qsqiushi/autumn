@@ -6,5 +6,6 @@ import com.autumn.api.sign.sdk.auth.credentials.Credentials;
 import java.util.Date;
 
 public abstract interface Presigner {
-    public abstract void presignRequest(Request<?> paramRequest, Credentials paramCredentials, Date paramDate);
+  public abstract void presignRequest(
+      Request<?> paramRequest, Credentials paramCredentials, Date paramDate);
 }

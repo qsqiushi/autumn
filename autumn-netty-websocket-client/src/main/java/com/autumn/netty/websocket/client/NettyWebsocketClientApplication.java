@@ -16,6 +16,45 @@ public class NettyWebsocketClientApplication {
   private WebSocketModel webSocketModel;
   private ThreadPoolExecutor threadPool;
 
+  public NettyWebsocketClientApplication(
+      Class<? extends WebSocketModel> model, WebSocketConfig[] products) {
+    try {
+      this.threadPool =
+          new ThreadPoolExecutor(0, 30, 60L, TimeUnit.SECONDS, new SynchronousQueue<>());
+      this.webSocketModel = model.newInstance().run().connect(products);
+      WebSocketActuatorAbstractAsync.init(threadPool);
+    } catch (InstantiationException | IllegalAccessException e) {
+      e.printStackTrace();
+    }
+  }
+
+  public NettyWebsocketClientApplication(WebSocketModel model, WebSocketConfig[] products) {
+    this.threadPool =
+        new ThreadPoolExecutor(0, 30, 60L, TimeUnit.SECONDS, new SynchronousQueue<>());
+    this.webSocketModel = model.connect(products);
+    WebSocketActuatorAbstractAsync.init(threadPool);
+  }
+
+  public NettyWebsocketClientApplication(
+      Class<? extends WebSocketModel> model,
+      ThreadPoolExecutor threadPool,
+      WebSocketConfig[] products) {
+    try {
+      this.threadPool = threadPool;
+      this.webSocketModel = model.newInstance().run().connect(products);
+      WebSocketActuatorAbstractAsync.init(threadPool);
+    } catch (InstantiationException | IllegalAccessException e) {
+      e.printStackTrace();
+    }
+  }
+
+  public NettyWebsocketClientApplication(
+      WebSocketModel model, ThreadPoolExecutor threadPool, WebSocketConfig[] products) {
+    this.threadPool = threadPool;
+    this.webSocketModel = model.connect(products);
+    WebSocketActuatorAbstractAsync.init(threadPool);
+  }
+
   public static NettyWebsocketClientApplication run() {
     return new NettyWebsocketClientApplication(WebSocketModelNio.class, new WebSocketConfig[] {});
   }
@@ -58,45 +97,6 @@ public class NettyWebsocketClientApplication {
       ThreadPoolExecutor threadPool,
       WebSocketConfig... products) {
     return new NettyWebsocketClientApplication(model, threadPool, products);
-  }
-
-  public NettyWebsocketClientApplication(
-      Class<? extends WebSocketModel> model, WebSocketConfig[] products) {
-    try {
-      this.threadPool =
-          new ThreadPoolExecutor(0, 30, 60L, TimeUnit.SECONDS, new SynchronousQueue<>());
-      this.webSocketModel = model.newInstance().run().connect(products);
-      WebSocketActuatorAbstractAsync.init(threadPool);
-    } catch (InstantiationException | IllegalAccessException e) {
-      e.printStackTrace();
-    }
-  }
-
-  public NettyWebsocketClientApplication(WebSocketModel model, WebSocketConfig[] products) {
-    this.threadPool =
-        new ThreadPoolExecutor(0, 30, 60L, TimeUnit.SECONDS, new SynchronousQueue<>());
-    this.webSocketModel = model.connect(products);
-    WebSocketActuatorAbstractAsync.init(threadPool);
-  }
-
-  public NettyWebsocketClientApplication(
-      Class<? extends WebSocketModel> model,
-      ThreadPoolExecutor threadPool,
-      WebSocketConfig[] products) {
-    try {
-      this.threadPool = threadPool;
-      this.webSocketModel = model.newInstance().run().connect(products);
-      WebSocketActuatorAbstractAsync.init(threadPool);
-    } catch (InstantiationException | IllegalAccessException e) {
-      e.printStackTrace();
-    }
-  }
-
-  public NettyWebsocketClientApplication(
-      WebSocketModel model, ThreadPoolExecutor threadPool, WebSocketConfig[] products) {
-    this.threadPool = threadPool;
-    this.webSocketModel = model.connect(products);
-    WebSocketActuatorAbstractAsync.init(threadPool);
   }
 
   public NettyWebsocketClientApplication connect(String id, WebSocketConfig product) {

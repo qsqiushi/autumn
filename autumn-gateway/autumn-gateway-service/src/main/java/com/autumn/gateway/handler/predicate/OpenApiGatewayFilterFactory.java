@@ -47,20 +47,18 @@ import java.util.List;
 public class OpenApiGatewayFilterFactory
     extends AbstractGatewayFilterFactory<OpenApiGatewayFilterFactory.Config> {
 
+  private static final String URL = "url";
+  private static final String ROLES = "roles";
   private HttpClientBuilder httpClientBuilder;
-
-  public OpenApiGatewayFilterFactory setHttpClientBuilder(HttpClientBuilder httpClientBuilder) {
-    this.httpClientBuilder = httpClientBuilder;
-    return this;
-  }
 
   public OpenApiGatewayFilterFactory() {
     super(Config.class);
   }
 
-  private static final String URL = "url";
-
-  private static final String ROLES = "roles";
+  public OpenApiGatewayFilterFactory setHttpClientBuilder(HttpClientBuilder httpClientBuilder) {
+    this.httpClientBuilder = httpClientBuilder;
+    return this;
+  }
 
   @Override
   public GatewayFilter apply(Config config) {

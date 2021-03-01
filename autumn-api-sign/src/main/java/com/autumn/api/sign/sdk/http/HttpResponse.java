@@ -13,55 +13,55 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class HttpResponse {
-    private final Request<?> request;
-    private final HttpRequestBase httpRequest;
-    private String statusText;
-    private int statusCode;
-    private InputStream content;
-    private Map<String, String> headers = new HashMap();
+  private final Request<?> request;
+  private final HttpRequestBase httpRequest;
+  private String statusText;
+  private int statusCode;
+  private InputStream content;
+  private Map<String, String> headers = new HashMap();
 
-    public HttpResponse(Request<?> request, HttpRequestBase httpRequest) {
-        this.request = request;
-        this.httpRequest = httpRequest;
-    }
+  public HttpResponse(Request<?> request, HttpRequestBase httpRequest) {
+    this.request = request;
+    this.httpRequest = httpRequest;
+  }
 
-    public Request<?> getRequest() {
-        return this.request;
-    }
+  public Request<?> getRequest() {
+    return this.request;
+  }
 
-    public HttpRequestBase getHttpRequest() {
-        return this.httpRequest;
-    }
+  public HttpRequestBase getHttpRequest() {
+    return this.httpRequest;
+  }
 
-    public Map<String, String> getHeaders() {
-        return this.headers;
-    }
+  public Map<String, String> getHeaders() {
+    return this.headers;
+  }
 
-    public void addHeader(String name, String value) {
-        this.headers.put(name, value);
-    }
+  public void addHeader(String name, String value) {
+    this.headers.put(name, value);
+  }
 
-    public void setContent(InputStream content) {
-        this.content = content;
-    }
+  public InputStream getContent() {
+    return this.content;
+  }
 
-    public InputStream getContent() {
-        return this.content;
-    }
+  public void setContent(InputStream content) {
+    this.content = content;
+  }
 
-    public void setStatusText(String statusText) {
-        this.statusText = statusText;
-    }
+  public String getStatusText() {
+    return this.statusText;
+  }
 
-    public String getStatusText() {
-        return this.statusText;
-    }
+  public void setStatusText(String statusText) {
+    this.statusText = statusText;
+  }
 
-    public void setStatusCode(int statusCode) {
-        this.statusCode = statusCode;
-    }
+  public int getStatusCode() {
+    return this.statusCode;
+  }
 
-    public int getStatusCode() {
-        return this.statusCode;
-    }
+  public void setStatusCode(int statusCode) {
+    this.statusCode = statusCode;
+  }
 }

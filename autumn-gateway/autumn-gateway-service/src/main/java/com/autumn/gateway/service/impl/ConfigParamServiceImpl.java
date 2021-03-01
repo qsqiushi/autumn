@@ -7,14 +7,11 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**
- * <p>
- *  服务实现类
- * </p>
+ * 服务实现类
  *
  * @author 自动生成
  * @since 2021-01-07
  */
 @Service
-public class ConfigParamServiceImpl extends ServiceImpl<ConfigParamMapper, ConfigParam> implements IConfigParamService {
-
-}
+public class ConfigParamServiceImpl extends ServiceImpl<ConfigParamMapper, ConfigParam>
+    implements IConfigParamService {}

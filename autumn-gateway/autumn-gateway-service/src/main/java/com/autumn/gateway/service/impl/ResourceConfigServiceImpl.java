@@ -7,14 +7,11 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**
- * <p>
- *  服务实现类
- * </p>
+ * 服务实现类
  *
  * @author 自动生成
  * @since 2021-01-07
  */
 @Service
-public class ResourceConfigServiceImpl extends ServiceImpl<ResourceConfigMapper, ResourceConfig> implements IResourceConfigService {
-
-}
+public class ResourceConfigServiceImpl extends ServiceImpl<ResourceConfigMapper, ResourceConfig>
+    implements IResourceConfigService {}

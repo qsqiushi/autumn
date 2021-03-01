@@ -10,12 +10,11 @@ import java.util.Map;
  * @description:
  * @author: qius
  * @create: 2021-01-12:19:51
- **/
+ */
 @Data
 public class ResourceDTO {
 
-    private String resourceId;
+  private String resourceId;
 
-
-    private List<Map<String, String>> params;
+  private List<Map<String, String>> params;
 }

@@ -9,9 +9,9 @@ import lombok.Data;
  * @description:
  * @author: qius
  * @create: 2021-01-07:17:17
- **/
+ */
 @Data
 public class ResourceConfigInfo extends ResourceConfig {
 
-    private Config config;
+  private Config config;
 }

@@ -1,45 +1,45 @@
-package com.autumn.gateway.handler;//package com.airlook.map.gateway;
+package com.autumn.gateway.handler; // package com.airlook.map.gateway;
 //
-//import com.airlook.gateway.route.RedisRouteDefinitionRepository;
-//import com.airlook.map.gateway.common.GateWayConstants;
-//import com.airlook.map.gateway.entity.Route;
-//import com.airlook.map.gateway.entity.RouteGroup;
-//import com.airlook.map.gateway.entity.enums.Status;
-//import com.airlook.map.gateway.mapper.RouteGroupMapper;
-//import com.airlook.map.gateway.mapper.RouteMapper;
-//import com.alibaba.fastjson.JSON;
-//import com.alibaba.fastjson.JSONArray;
-//import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-//import lombok.extern.slf4j.Slf4j;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.boot.CommandLineRunner;
-//import org.springframework.cloud.gateway.event.RefreshRoutesEvent;
-//import org.springframework.cloud.gateway.filter.FilterDefinition;
-//import org.springframework.cloud.gateway.handler.predicate.PredicateDefinition;
-//import org.springframework.cloud.gateway.route.RouteDefinition;
-//import org.springframework.context.ApplicationEventPublisher;
-//import org.springframework.context.ApplicationEventPublisherAware;
-//import org.springframework.stereotype.Component;
-//import org.springframework.util.CollectionUtils;
-//import org.springframework.util.StringUtils;
-//import org.springframework.web.util.UriComponentsBuilder;
-//import reactor.core.publisher.Mono;
+// import com.airlook.gateway.route.RedisRouteDefinitionRepository;
+// import com.airlook.map.gateway.common.GateWayConstants;
+// import com.airlook.map.gateway.entity.Route;
+// import com.airlook.map.gateway.entity.RouteGroup;
+// import com.airlook.map.gateway.entity.enums.Status;
+// import com.airlook.map.gateway.mapper.RouteGroupMapper;
+// import com.airlook.map.gateway.mapper.RouteMapper;
+// import com.alibaba.fastjson.JSON;
+// import com.alibaba.fastjson.JSONArray;
+// import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+// import lombok.extern.slf4j.Slf4j;
+// import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.boot.CommandLineRunner;
+// import org.springframework.cloud.gateway.event.RefreshRoutesEvent;
+// import org.springframework.cloud.gateway.filter.FilterDefinition;
+// import org.springframework.cloud.gateway.handler.predicate.PredicateDefinition;
+// import org.springframework.cloud.gateway.route.RouteDefinition;
+// import org.springframework.context.ApplicationEventPublisher;
+// import org.springframework.context.ApplicationEventPublisherAware;
+// import org.springframework.stereotype.Component;
+// import org.springframework.util.CollectionUtils;
+// import org.springframework.util.StringUtils;
+// import org.springframework.web.util.UriComponentsBuilder;
+// import reactor.core.publisher.Mono;
 //
-//import javax.annotation.Resource;
-//import java.net.URI;
-//import java.util.HashMap;
-//import java.util.List;
-//import java.util.Map;
-//import java.util.stream.Collectors;
+// import javax.annotation.Resource;
+// import java.net.URI;
+// import java.util.HashMap;
+// import java.util.List;
+// import java.util.Map;
+// import java.util.stream.Collectors;
 //
-///**
+/// **
 // * @description:
 // * @author: shenyonggang
 // * @date: 2020-11-19 15:40
 // */
-//@Slf4j
-//@Component
-//public class GatewayServiceHandler implements ApplicationEventPublisherAware, CommandLineRunner {
+// @Slf4j
+// @Component
+// public class GatewayServiceHandler implements ApplicationEventPublisherAware, CommandLineRunner {
 //
 //  @Resource private RedisRouteDefinitionRepository routeDefinitionWriter;
 //
@@ -80,7 +80,8 @@ package com.autumn.gateway.handler;//package com.airlook.map.gateway;
 //    log.info("网关路由分组配置信息：{}", JSON.toJSONString(groups));
 //
 //    Map<String, String> groupDomainMap =
-//        groups.stream().collect(Collectors.toMap(RouteGroup::getGroupCode, RouteGroup::getDomain));
+//        groups.stream().collect(Collectors.toMap(RouteGroup::getGroupCode,
+// RouteGroup::getDomain));
 //
 //    gatewayRouteList.forEach(
 //        gatewayRoute -> {
@@ -176,4 +177,4 @@ package com.autumn.gateway.handler;//package com.airlook.map.gateway;
 //    routeDefinitionWriter.delete(Mono.just(routeId)).subscribe();
 //    this.publisher.publishEvent(new RefreshRoutesEvent(this));
 //  }
-//}
+// }

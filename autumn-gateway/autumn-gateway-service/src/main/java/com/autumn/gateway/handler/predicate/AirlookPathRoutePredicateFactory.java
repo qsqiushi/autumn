@@ -162,8 +162,7 @@ public class AirlookPathRoutePredicateFactory
       return matchOptionalTrailingSeparator;
     }
 
-    public Config setMatchOptionalTrailingSeparator(
-        boolean matchOptionalTrailingSeparator) {
+    public Config setMatchOptionalTrailingSeparator(boolean matchOptionalTrailingSeparator) {
       this.matchOptionalTrailingSeparator = matchOptionalTrailingSeparator;
       return this;
     }

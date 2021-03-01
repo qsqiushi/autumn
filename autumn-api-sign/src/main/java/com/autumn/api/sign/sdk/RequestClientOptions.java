@@ -11,71 +11,68 @@ import java.util.EnumMap;
 
 @NotThreadSafe
 public final class RequestClientOptions {
-    public static final int DEFAULT_STREAM_BUFFER_SIZE = 131073;
+  public static final int DEFAULT_STREAM_BUFFER_SIZE = 131073;
+  private final EnumMap<Marker, String> markers = new EnumMap(Marker.class);
+  private int readLimit = 131073;
 
-    private int readLimit = 131073;
+  public RequestClientOptions() {}
 
-    public static enum Marker {
-        USER_AGENT;
+  /** @deprecated */
+  @Deprecated
+  public String getClientMarker() {
+    return this.getClientMarker(RequestClientOptions.Marker.USER_AGENT);
+  }
 
-        private Marker() {}
+  public String getClientMarker(RequestClientOptions.Marker marker) {
+    return (String) this.markers.get(marker);
+  }
+
+  public void putClientMarker(RequestClientOptions.Marker marker, String value) {
+    this.markers.put(marker, value);
+  }
+
+  /** @deprecated */
+  @Deprecated
+  public void addClientMarker(String clientMarker) {
+    this.appendUserAgent(clientMarker);
+  }
+
+  public void appendUserAgent(String userAgent) {
+    String marker = (String) this.markers.get(RequestClientOptions.Marker.USER_AGENT);
+    if (marker == null) {
+      marker = "";
     }
 
-    private final EnumMap<Marker, String> markers = new EnumMap(Marker.class);
+    marker = this.createUserAgentMarkerString(marker, userAgent);
+    this.putClientMarker(RequestClientOptions.Marker.USER_AGENT, marker);
+  }
 
-    public RequestClientOptions() {}
+  private String createUserAgentMarkerString(String marker, String userAgent) {
+    return marker.contains(userAgent) ? marker : marker + " " + userAgent;
+  }
 
-    /** @deprecated */
-    @Deprecated
-    public String getClientMarker() {
-        return this.getClientMarker(RequestClientOptions.Marker.USER_AGENT);
+  public final int getReadLimit() {
+    return this.readLimit;
+  }
+
+  public final void setReadLimit(int readLimit) {
+    this.readLimit = readLimit;
+  }
+
+  void copyTo(RequestClientOptions target) {
+    target.setReadLimit(this.getReadLimit());
+    RequestClientOptions.Marker[] var2 = RequestClientOptions.Marker.values();
+    int var3 = var2.length;
+
+    for (int var4 = 0; var4 < var3; ++var4) {
+      RequestClientOptions.Marker marker = var2[var4];
+      target.putClientMarker(marker, this.getClientMarker(marker));
     }
+  }
 
-    public String getClientMarker(RequestClientOptions.Marker marker) {
-        return (String)this.markers.get(marker);
-    }
+  public static enum Marker {
+    USER_AGENT;
 
-    public void putClientMarker(RequestClientOptions.Marker marker, String value) {
-        this.markers.put(marker, value);
-    }
-
-    /** @deprecated */
-    @Deprecated
-    public void addClientMarker(String clientMarker) {
-        this.appendUserAgent(clientMarker);
-    }
-
-    public void appendUserAgent(String userAgent) {
-        String marker = (String)this.markers.get(RequestClientOptions.Marker.USER_AGENT);
-        if (marker == null) {
-            marker = "";
-        }
-
-        marker = this.createUserAgentMarkerString(marker, userAgent);
-        this.putClientMarker(RequestClientOptions.Marker.USER_AGENT, marker);
-    }
-
-    private String createUserAgentMarkerString(String marker, String userAgent) {
-        return marker.contains(userAgent) ? marker : marker + " " + userAgent;
-    }
-
-    public final int getReadLimit() {
-        return this.readLimit;
-    }
-
-    public final void setReadLimit(int readLimit) {
-        this.readLimit = readLimit;
-    }
-
-    void copyTo(RequestClientOptions target) {
-        target.setReadLimit(this.getReadLimit());
-        RequestClientOptions.Marker[] var2 = RequestClientOptions.Marker.values();
-        int var3 = var2.length;
-
-        for (int var4 = 0; var4 < var3; ++var4) {
-            RequestClientOptions.Marker marker = var2[var4];
-            target.putClientMarker(marker, this.getClientMarker(marker));
-        }
-
-    }
+    private Marker() {}
+  }
 }

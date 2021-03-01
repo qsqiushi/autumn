@@ -8,9 +8,9 @@ package com.autumn.model.web;
  */
 public interface BaseResult<T> {
 
-    T getData();
+  T getData();
 
-    int getCode();
+  int getCode();
 
-    String getMsg();
+  String getMsg();
 }

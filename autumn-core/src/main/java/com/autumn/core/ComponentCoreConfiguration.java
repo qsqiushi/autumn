@@ -26,13 +26,12 @@ import javax.validation.constraints.NotNull;
 @EnableConfigurationProperties(com.autumn.core.ComponentCoreProperties.class)
 public class ComponentCoreConfiguration {
 
-    @NotNull(message = "spring.application.name is required")
-    @Value("${spring.application.name}")
-    private String applicationName;
+  @NotNull(message = "spring.application.name is required")
+  @Value("${spring.application.name}")
+  private String applicationName;
 
-    @PostConstruct
-    public void init() {
-        log.info("Loading AirLook Component Core Configuration");
-    }
-
+  @PostConstruct
+  public void init() {
+    log.info("Loading AirLook Component Core Configuration");
+  }
 }

@@ -14,41 +14,41 @@ import java.util.List;
 
 @NotThreadSafe
 public class ExecutionContext {
-    private final List<RequestHandler> requestHandlers;
-    private final WebServiceClient client;
-    private String contextUserAgent;
-    private Credentials credentials;
+  private final List<RequestHandler> requestHandlers;
+  private final WebServiceClient client;
+  private String contextUserAgent;
+  private Credentials credentials;
 
-    public ExecutionContext(List<RequestHandler> requestHandlers, WebServiceClient client) {
-        this.requestHandlers = requestHandlers;
-        this.client = client;
-    }
+  public ExecutionContext(List<RequestHandler> requestHandlers, WebServiceClient client) {
+    this.requestHandlers = requestHandlers;
+    this.client = client;
+  }
 
-    public String getContextUserAgent() {
-        return this.contextUserAgent;
-    }
+  public String getContextUserAgent() {
+    return this.contextUserAgent;
+  }
 
-    public void setContextUserAgent(String contextUserAgent) {
-        this.contextUserAgent = contextUserAgent;
-    }
+  public void setContextUserAgent(String contextUserAgent) {
+    this.contextUserAgent = contextUserAgent;
+  }
 
-    public List<RequestHandler> getRequestHandlers() {
-        return this.requestHandlers;
-    }
+  public List<RequestHandler> getRequestHandlers() {
+    return this.requestHandlers;
+  }
 
-    protected WebServiceClient getClient() {
-        return this.client;
-    }
+  protected WebServiceClient getClient() {
+    return this.client;
+  }
 
-    public Signer getSigner() {
-        return this.client == null ? null : this.client.getSigner();
-    }
+  public Signer getSigner() {
+    return this.client == null ? null : this.client.getSigner();
+  }
 
-    public Credentials getCredentials() {
-        return this.credentials;
-    }
+  public Credentials getCredentials() {
+    return this.credentials;
+  }
 
-    public void setCredentials(Credentials credentials) {
-        this.credentials = credentials;
-    }
+  public void setCredentials(Credentials credentials) {
+    this.credentials = credentials;
+  }
 }

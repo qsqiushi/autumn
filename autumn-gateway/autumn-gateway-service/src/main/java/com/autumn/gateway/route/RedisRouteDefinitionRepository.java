@@ -24,49 +24,46 @@ import java.util.List;
 @Component
 public class RedisRouteDefinitionRepository implements RouteDefinitionRepository {
 
-    @Resource
-    private RedisTemplate redisTemplate;
+  public static final String GATEWAY_ROUTES = "airlook:gateway:route";
+  private static Gson gson = new Gson();
+  @Resource private RedisTemplate redisTemplate;
 
-    private static Gson gson = new Gson();
+  @Override
+  public Flux<RouteDefinition> getRouteDefinitions() {
+    List<RouteDefinition> routeDefinitions = new ArrayList<>();
+    redisTemplate.opsForHash().values(GATEWAY_ROUTES).stream()
+        .forEach(
+            routeDefinition -> {
+              routeDefinitions.add(
+                  gson.fromJson(routeDefinition.toString(), RouteDefinition.class));
+            });
+    return Flux.fromIterable(routeDefinitions);
+  }
 
-    public static final String GATEWAY_ROUTES = "airlook:gateway:route";
+  @Override
+  public Mono<Void> save(Mono<RouteDefinition> route) {
+    return route.flatMap(
+        routeDefinition -> {
+          redisTemplate
+              .opsForHash()
+              .put(GATEWAY_ROUTES, routeDefinition.getId(), gson.toJson(routeDefinition));
+          return Mono.empty();
+        });
+  }
 
-    @Override
-    public Flux<RouteDefinition> getRouteDefinitions() {
-        List<RouteDefinition> routeDefinitions = new ArrayList<>();
-        redisTemplate.opsForHash().values(GATEWAY_ROUTES).stream()
-                .forEach(
-                        routeDefinition -> {
-                            routeDefinitions.add(
-                                    gson.fromJson(routeDefinition.toString(), RouteDefinition.class));
-                        });
-        return Flux.fromIterable(routeDefinitions);
-    }
-
-    @Override
-    public Mono<Void> save(Mono<RouteDefinition> route) {
-        return route.flatMap(
-                routeDefinition -> {
-                    redisTemplate
-                            .opsForHash()
-                            .put(GATEWAY_ROUTES, routeDefinition.getId(), gson.toJson(routeDefinition));
-                    return Mono.empty();
-                });
-    }
-
-    @Override
-    public Mono<Void> delete(Mono<String> routeId) {
-        log.info("this is  RedisRouteDefinitionRepository del ");
-        return routeId.flatMap(
-                id -> {
-                    log.info("del route id[{}]", id);
-                    if (redisTemplate.opsForHash().hasKey(GATEWAY_ROUTES, id)) {
-                        redisTemplate.opsForHash().delete(GATEWAY_ROUTES, id);
-                        log.info(" route id [{}] has bean deleted", id);
-                        return Mono.empty();
-                    }
-                    return Mono.defer(
-                            () -> Mono.error(new NotFoundException("RouteDefinition not found: " + routeId)));
-                });
-    }
+  @Override
+  public Mono<Void> delete(Mono<String> routeId) {
+    log.info("this is  RedisRouteDefinitionRepository del ");
+    return routeId.flatMap(
+        id -> {
+          log.info("del route id[{}]", id);
+          if (redisTemplate.opsForHash().hasKey(GATEWAY_ROUTES, id)) {
+            redisTemplate.opsForHash().delete(GATEWAY_ROUTES, id);
+            log.info(" route id [{}] has bean deleted", id);
+            return Mono.empty();
+          }
+          return Mono.defer(
+              () -> Mono.error(new NotFoundException("RouteDefinition not found: " + routeId)));
+        });
+  }
 }

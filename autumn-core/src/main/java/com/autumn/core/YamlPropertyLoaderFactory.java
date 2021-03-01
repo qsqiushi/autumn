@@ -17,13 +17,16 @@ import java.util.Objects;
  * @since 2019-07-09 10:59
  */
 public class YamlPropertyLoaderFactory extends DefaultPropertySourceFactory {
-    @Override
-    public PropertySource<?> createPropertySource(String name, EncodedResource resource) throws IOException {
-        if (Objects.isNull(resource)) {
-            return super.createPropertySource(name, resource);
-        }
-
-        List<PropertySource<?>> ps = new YamlPropertySourceLoader().load(resource.getResource().getFilename(), resource.getResource());
-        return ps.isEmpty() ? null : ps.get(0);
+  @Override
+  public PropertySource<?> createPropertySource(String name, EncodedResource resource)
+      throws IOException {
+    if (Objects.isNull(resource)) {
+      return super.createPropertySource(name, resource);
     }
+
+    List<PropertySource<?>> ps =
+        new YamlPropertySourceLoader()
+            .load(resource.getResource().getFilename(), resource.getResource());
+    return ps.isEmpty() ? null : ps.get(0);
+  }
 }

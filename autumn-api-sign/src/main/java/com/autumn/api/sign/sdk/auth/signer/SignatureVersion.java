@@ -6,15 +6,15 @@
 package com.autumn.api.sign.sdk.auth.signer;
 
 public enum SignatureVersion {
-    V1("1");
+  V1("1");
 
-    private String value;
+  private String value;
 
-    private SignatureVersion(String value) {
-        this.value = value;
-    }
+  private SignatureVersion(String value) {
+    this.value = value;
+  }
 
-    public String toString() {
-        return this.value;
-    }
+  public String toString() {
+    return this.value;
+  }
 }
