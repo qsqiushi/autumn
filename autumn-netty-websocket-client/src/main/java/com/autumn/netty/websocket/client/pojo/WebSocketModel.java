@@ -34,7 +34,7 @@ import java.util.UUID;
 /**
  * @program:
  * @description: 模型
- * @author: qius
+ * @author: qiushi
  * @create: 2020-09-03:11:04
  */
 @Slf4j

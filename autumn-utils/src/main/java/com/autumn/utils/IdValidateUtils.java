@@ -8,7 +8,7 @@ import java.util.Date;
 /**
  * 身份证格式校验工具类
  *
- * @author Aysn
+ * @author qiushi
  */
 public class IdValidateUtils {
 

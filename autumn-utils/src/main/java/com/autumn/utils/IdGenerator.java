@@ -3,7 +3,7 @@ package com.autumn.utils;
 /**
  * ID生成器
  *
- * @author Aysn
+ * @author qiushi
  * @since 2019-05-31
  */
 public class IdGenerator {

@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 /**
  * 请求参数校验工具类
  *
- * @author Aysn
+ * @author qiushi
  */
 public class ValidateUtils {
 

@@ -7,7 +7,7 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * <配置类型>
  *
- * @author qius
+ * @author qiushi
  * @since 2021/1/7 19:22
  */
 @Getter

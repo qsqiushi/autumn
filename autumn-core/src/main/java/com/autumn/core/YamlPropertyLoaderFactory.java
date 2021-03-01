@@ -12,7 +12,7 @@ import java.util.Objects;
 /**
  * 加载自定yaml文件属性
  *
- * @author Aysn
+ * @author qiushi
  * @author qiushi
  * @since 2019-07-09 10:59
  */

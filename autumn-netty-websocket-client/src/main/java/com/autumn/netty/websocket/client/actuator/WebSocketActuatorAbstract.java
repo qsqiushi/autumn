@@ -5,7 +5,7 @@ import com.autumn.netty.websocket.client.NettyWebSocketClient;
 /**
  * @program:
  * @description:
- * @author: qius
+ * @author: qiushi
  * @create: 2020-09-02:19:29
  */
 public abstract class WebSocketActuatorAbstract extends WebSocketActuatorBase {

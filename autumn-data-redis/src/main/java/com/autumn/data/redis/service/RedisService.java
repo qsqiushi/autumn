@@ -9,8 +9,8 @@ import java.util.Set;
 /**
  * redis接口
  *
- * @author qius
- * @author Aysn
+ * @author qiushi
+ * @author qiushi
  * @since 2019-03-13 18:02
  */
 public interface RedisService<T> {
@@ -331,8 +331,8 @@ public interface RedisService<T> {
    * <批量删除key>
    *
    * @param pattern
-   * @author qius
-   * @updator qius
+   * @author qiushi
+   * @updator qiushi
    * @since 2020/11/3 14:22
    */
   void deleteBatch(String pattern);

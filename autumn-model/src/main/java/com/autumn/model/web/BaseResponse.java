@@ -11,7 +11,7 @@ import java.util.Objects;
 
 /**
  * @description: <公共响应类>
- * @author: qius
+ * @author: qiushi
  * @create: 2019-08-07 10:31
  */
 @Data

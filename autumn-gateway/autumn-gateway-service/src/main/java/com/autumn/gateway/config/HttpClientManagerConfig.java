@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 /**
  * @program: dataearth-cloud-dev
  * @description: 连接池配置
- * @author: qius
+ * @author: qiushi
  * @create: 2019-04-02 16:17
  */
 @Component

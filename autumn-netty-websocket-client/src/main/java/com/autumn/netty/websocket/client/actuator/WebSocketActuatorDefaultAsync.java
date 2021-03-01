@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * @program:
  * @description: 模式执行器
- * @author: qius
+ * @author: qiushi
  * @create: 2020-09-02:19:52
  */
 @Slf4j

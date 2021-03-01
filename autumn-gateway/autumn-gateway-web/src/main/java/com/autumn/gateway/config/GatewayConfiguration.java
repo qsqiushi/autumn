@@ -1,9 +1,9 @@
 package com.autumn.gateway.config;
 
 /**
- * @program: airlook-dev
+ * @program: autumn-dev
  * @description:
- * @author: qius
+ * @author: qiushi
  * @create: 2021-01-15:19:20
  */
 import com.alibaba.csp.sentinel.adapter.gateway.common.SentinelGatewayConstants;

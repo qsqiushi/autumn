@@ -19,8 +19,8 @@ public interface IResourceService extends IService<Resource> {
    * @param resource
    * @param params
    * @return : void
-   * @author qius
-   * @updator qius
+   * @author qiushi
+   * @updator qiushi
    * @since 2021/1/13 10:49
    */
   void saveConfig(Resource resource, List<Map<String, String>> params);

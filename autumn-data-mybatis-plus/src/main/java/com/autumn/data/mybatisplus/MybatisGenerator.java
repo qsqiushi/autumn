@@ -15,7 +15,7 @@ import java.util.List;
  * mysql 代码生成器演示例子
  *
  * @author jobob
- * @author Aysn
+ * @author qiushi
  * @since 2018-09-12
  */
 public class MybatisGenerator {
@@ -47,7 +47,7 @@ public class MybatisGenerator {
 
   public static void main(String[] args) {
     new MybatisGenerator(
-            "com.airlook.passport",
+            "com.autumn.passport",
             "root",
             "pro.rdsmajl7aar4fdc.rds.bd.baidubce.com",
             "root",

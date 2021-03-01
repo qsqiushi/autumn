@@ -9,7 +9,7 @@ import java.util.*;
 /**
  * @program:
  * @description: 配置文件
- * @author: qius
+ * @author: qiushi
  * @create: 2020-09-03:10:52
  */
 public class WebSocketConfig {

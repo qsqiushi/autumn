@@ -12,7 +12,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
- * @author qius
+ * @author qiushi
  * @date 2017年1月13日 下午1:18:11
  * @describe 基类
  */

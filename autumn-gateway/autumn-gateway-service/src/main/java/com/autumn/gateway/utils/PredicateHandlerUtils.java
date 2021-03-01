@@ -14,9 +14,9 @@ import reactor.core.publisher.Mono;
 import java.nio.charset.StandardCharsets;
 
 /**
- * @program: airlook-dev
+ * @program: autumn-dev
  * @description: 过滤器
- * @author: qius
+ * @author: qiushi
  * @create: 2020-12-25:09:41
  */
 public class PredicateHandlerUtils {

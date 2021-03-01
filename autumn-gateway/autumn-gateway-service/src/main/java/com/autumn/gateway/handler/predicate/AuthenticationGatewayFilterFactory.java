@@ -35,9 +35,9 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * @program: airlook-passport
+ * @program: autumn-passport
  * @description: 鉴权路由工厂
- * @author: qius
+ * @author: qiushi
  * @create: 2020-12-22:09:36
  */
 @Slf4j

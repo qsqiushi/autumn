@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * @program:
  * @description: netty客户端
- * @author: qius
+ * @author: qiushi
  * @create: 2020-09-02:17:12
  */
 public class NettyWebSocketClient {

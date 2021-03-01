@@ -453,15 +453,15 @@ public class DynamicRouteServiceImpl
     rules.add(rule);
     ParamFlowRuleManager.loadRules(rules);
 
-    ClusterParamFlowRuleManager.registerPropertyIfAbsent("airlook-gateway");
-    ClusterParamFlowRuleManager.loadRules("airlook-gateway", rules);
+    ClusterParamFlowRuleManager.registerPropertyIfAbsent("autumn-gateway");
+    ClusterParamFlowRuleManager.loadRules("autumn-gateway", rules);
 
     ServerTransportConfig serverTransportConfig = new ServerTransportConfig(18888, 600);
     // 加载配置
     ClusterServerConfigManager.loadGlobalTransportConfig(serverTransportConfig);
 
     Set<String> nameSpaceSet = new HashSet<String>();
-    nameSpaceSet.add("airlook-gateway");
+    nameSpaceSet.add("autumn-gateway");
     // 服务配置namespace
     ClusterServerConfigManager.loadServerNamespaceSet(nameSpaceSet);
 

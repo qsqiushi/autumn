@@ -61,7 +61,7 @@ public class MysqlGenerator {
     // 包配置
     PackageConfig pc = new PackageConfig();
     // pc.setModuleName(scanner("模块名"));
-    pc.setParent("com.airlook.gateway");
+    pc.setParent("com.autumn.gateway");
     mpg.setPackageInfo(pc);
 
     // 自定义配置
@@ -94,9 +94,9 @@ public class MysqlGenerator {
     StrategyConfig strategy = new StrategyConfig();
     strategy.setNaming(NamingStrategy.underline_to_camel);
     strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-    // strategy.setSuperEntityClass("com.airlook.ceph.base.BasePO");
+    // strategy.setSuperEntityClass("com.autumn.ceph.base.BasePO");
     strategy.setEntityLombokModel(true);
-    // strategy.setSuperControllerClass("com.airlook.map.iserver.common.BaseController");
+    // strategy.setSuperControllerClass("com.autumn.map.iserver.common.BaseController");
     strategy.setInclude(tableName);
     strategy.setSuperEntityColumns("id");
     strategy.setControllerMappingHyphenStyle(true);

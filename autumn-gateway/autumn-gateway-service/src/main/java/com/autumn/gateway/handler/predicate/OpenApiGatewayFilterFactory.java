@@ -38,9 +38,9 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * @program: airlook-dev
+ * @program: autumn-dev
  * @description: 开放接口过滤器
- * @author: qius
+ * @author: qiushi
  * @create: 2020-12-24:17:53
  */
 @Slf4j

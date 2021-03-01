@@ -5,9 +5,9 @@ import com.autumn.gateway.entity.ResourceConfigParam;
 import lombok.Data;
 
 /**
- * @program: airlook-dev
+ * @program: autumn-dev
  * @description:
- * @author: qius
+ * @author: qiushi
  * @create: 2021-01-08:10:52
  */
 @Data

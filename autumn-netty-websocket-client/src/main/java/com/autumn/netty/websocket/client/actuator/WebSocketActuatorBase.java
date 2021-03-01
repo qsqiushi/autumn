@@ -5,7 +5,7 @@ import com.autumn.netty.websocket.client.converter.ContextConverter;
 /**
  * @program:
  * @description: 基础执行类
- * @author: qius
+ * @author: qiushi
  * @create: 2020-09-02:19:30
  */
 public abstract class WebSocketActuatorBase implements ContextConverter, IWebSocketActuator {

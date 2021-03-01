@@ -23,9 +23,9 @@ public interface ResourceConfigMapper extends BaseMapper<ResourceConfig> {
    * <查询资源配置>
    *
    * @param queryWrapper
-   * @return : java.util.List<com.airlook.gateway.po.ResourceConfigInfo>
-   * @author qius
-   * @updator qius
+   * @return : java.util.List<com.autumn.gateway.po.ResourceConfigInfo>
+   * @author qiushi
+   * @updator qiushi
    * @since 2021/1/7 17:25
    */
   List<ResourceConfigInfo> selectResourceConfigInfo(

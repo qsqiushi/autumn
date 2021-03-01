@@ -7,7 +7,7 @@ import lombok.Getter;
 /**
  * @program: map-dev
  * @description: 接触类枚举 是否
- * @author: qius
+ * @author: qiushi
  * @create: 2019-06-17:14:52
  */
 @Getter

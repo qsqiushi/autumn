@@ -1,9 +1,9 @@
 package com.autumn.gateway.controller;
 
 /**
- * @program: airlook-dev
+ * @program: autumn-dev
  * @description: 资源
- * @author: qius
+ * @author: qiushi
  * @create: 2021-01-12:19:50
  */
 import com.autumn.gateway.dto.ResourceDTO;

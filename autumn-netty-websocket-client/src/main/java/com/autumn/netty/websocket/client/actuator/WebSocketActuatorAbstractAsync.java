@@ -7,7 +7,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 /**
  * @program:
  * @description:
- * @author: qius
+ * @author: qiushi
  * @create: 2020-09-02:19:48
  */
 public abstract class WebSocketActuatorAbstractAsync extends WebSocketActuatorBase {

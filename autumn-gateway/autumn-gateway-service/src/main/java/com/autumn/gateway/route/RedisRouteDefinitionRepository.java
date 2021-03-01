@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @program: airlook-dev
+ * @program: autumn-dev
  * @description: redis
  * @author: arthur
  * @create: 2020-12-23:14:52
@@ -24,7 +24,7 @@ import java.util.List;
 @Component
 public class RedisRouteDefinitionRepository implements RouteDefinitionRepository {
 
-  public static final String GATEWAY_ROUTES = "airlook:gateway:route";
+  public static final String GATEWAY_ROUTES = "autumn:gateway:route";
   private static Gson gson = new Gson();
   @Resource private RedisTemplate redisTemplate;
 

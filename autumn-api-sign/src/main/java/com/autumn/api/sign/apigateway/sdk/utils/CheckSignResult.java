@@ -1,9 +1,9 @@
 package com.autumn.api.sign.apigateway.sdk.utils;
 
 /**
- * @program: airlook-build
+ * @program: autumn-build
  * @description:
- * @author: qius
+ * @author: qiushi
  * @create: 2019-09-02:14:29
  */
 public enum CheckSignResult {

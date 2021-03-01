@@ -3,7 +3,7 @@ package com.autumn.data.redis.constants;
 /**
  * @program: autumn
  * @description:
- * @author: qius
+ * @author: qiushi
  * @create: 2021-03-01:14:18
  */
 public class RedisConstants {

@@ -3,7 +3,7 @@ package com.autumn.gateway.filter;
 /**
  * @program: dataearth-cloud-dev
  * @description:
- * @author: qius
+ * @author: qiushi
  * @create: 2020-01-20:08:36
  */
 //

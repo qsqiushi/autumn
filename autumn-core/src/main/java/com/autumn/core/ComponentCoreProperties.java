@@ -8,7 +8,7 @@ import org.springframework.validation.annotation.Validated;
 import javax.validation.constraints.NotNull;
 
 /**
- * @author Aysn
+ * @author qiushi
  * @since 2019-05-27 15:46
  */
 @Setter

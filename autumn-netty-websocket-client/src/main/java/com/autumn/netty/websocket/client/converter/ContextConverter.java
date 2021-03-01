@@ -5,7 +5,7 @@ import com.autumn.netty.websocket.client.NettyWebSocketClient;
 /**
  * @program:
  * @description: 上下文转换器 将 Netty 触发的事件转换触发自定义 Web Socket Client 事件
- * @author: qius
+ * @author: qiushi
  * @create: 2020-09-02:19:31
  */
 public interface ContextConverter {

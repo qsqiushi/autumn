@@ -5,7 +5,7 @@ import com.autumn.netty.websocket.client.NettyWebSocketClient;
 /**
  * <长链接客户端执行器>
  *
- * @author qius
+ * @author qiushi
  * @since 2020/9/2 17:45
  */
 public interface IWebSocketActuator {

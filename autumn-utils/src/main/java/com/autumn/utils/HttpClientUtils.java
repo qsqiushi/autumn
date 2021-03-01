@@ -105,7 +105,7 @@ public class HttpClientUtils {
   /**
    * @Description: @Param: [client, httpParams]
    *
-   * @return: java.lang.String @Author: qius @Date: 2019-04-03
+   * @return: java.lang.String @Author: qiushi @Date: 2019-04-03
    */
   public static String post(CloseableHttpClient client, HttpParams httpParams) {
     if (httpParams == null) {

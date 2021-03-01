@@ -9,9 +9,9 @@ import org.springframework.context.annotation.Configuration;
 import javax.annotation.Resource;
 
 /**
- * @program: airlook-dev
+ * @program: autumn-dev
  * @description:
- * @author: qius
+ * @author: qiushi
  * @create: 2020-12-22:19:48
  */
 @Configuration

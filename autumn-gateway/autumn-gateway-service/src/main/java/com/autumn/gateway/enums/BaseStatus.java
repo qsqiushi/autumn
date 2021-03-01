@@ -7,7 +7,7 @@ import lombok.Getter;
 /**
  * @program: map-dev
  * @description: 基础类状态枚举
- * @author: qius
+ * @author: qiushi
  * @create: 2019-06-17:14:32
  */
 @Getter

@@ -1,7 +1,7 @@
 package com.autumn.core;
 
 /**
- * @author Aysn
+ * @author qiushi
  * @since 2019-06-17 16:23
  */
 public class SymbolConstants {

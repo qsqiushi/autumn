@@ -11,8 +11,8 @@ public interface IDynamicRouteService {
    *
    * @param resource
    * @return : void
-   * @author qius
-   * @updator qius
+   * @author qiushi
+   * @updator qiushi
    * @since 2021/1/15 10:56
    */
   void updateResource(Resource resource);

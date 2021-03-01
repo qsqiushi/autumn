@@ -39,7 +39,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 /**
  * <启动类>
  *
- * @author qius
+ * @author qiushi
  * @since 2020/12/23 19:24
  */
 @EnableDiscoveryClient

@@ -6,9 +6,9 @@ import lombok.experimental.Accessors;
 import java.util.List;
 
 /**
- * @program: airlook-dev
+ * @program: autumn-dev
  * @description:
- * @author: qius
+ * @author: qiushi
  * @create: 2020-12-24:16:22
  */
 @Data

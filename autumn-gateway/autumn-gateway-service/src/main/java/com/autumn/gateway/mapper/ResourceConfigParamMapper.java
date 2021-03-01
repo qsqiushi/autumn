@@ -22,9 +22,9 @@ public interface ResourceConfigParamMapper extends BaseMapper<ResourceConfigPara
    * <>
    *
    * @param queryWrapper
-   * @return : java.util.List<com.airlook.gateway.po.ResourceConfigParamPO>
-   * @author qius
-   * @updator qius
+   * @return : java.util.List
+   * @author qiushi
+   * @updator qiushi
    * @since 2021/1/8 11:01
    */
   List<ResourceConfigParamPO> selectResourceConfigParamInfo(

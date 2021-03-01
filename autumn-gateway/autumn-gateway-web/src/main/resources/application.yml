@@ -35,7 +35,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: nacos-test.airlook.com:80
+        server-addr: nacos-test.autumn.com:80
         namespace: 53b92db0-0844-4e5c-866a-904a20b2e462
     sentinel:
       transport:
@@ -69,7 +69,7 @@ info:
   #  @project.description@
   #还可以自定义信息
   author: qiushi
-  blog: https://dataearth.airlook.com
+  blog: https://dataearth.autumn.com
 autumn:
   component:
     basePackage: com.autumn

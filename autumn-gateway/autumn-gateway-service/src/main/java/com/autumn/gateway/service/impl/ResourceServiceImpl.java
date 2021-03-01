@@ -39,8 +39,8 @@ public class ResourceServiceImpl extends ServiceImpl<ResourceMapper, Resource>
    * @param resource
    * @param params
    * @return : void
-   * @author qius
-   * @updator qius
+   * @author qiushi
+   * @updator qiushi
    * @since 2021/1/13 10:49
    */
   @Override
