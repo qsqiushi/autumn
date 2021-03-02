@@ -31,8 +31,8 @@ public abstract class WebSocketActuatorAbstract extends WebSocketActuatorBase {
   @Override
   public void converterOnMessageText(NettyWebSocketClient websocket, String message) {
     this.onMessageText(websocket, message);
-    System.gc(); // 回收掉生成的一次性的对象，避免内存泄漏
-    System.out.println("gc once");
+    // System.gc(); // 回收掉生成的一次性的对象，避免内存泄漏 gc太频繁会导致cpu占用率过高
+    // System.out.println("gc once");
   }
 
   @Override
