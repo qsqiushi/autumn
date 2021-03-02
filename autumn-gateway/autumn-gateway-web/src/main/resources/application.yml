@@ -27,16 +27,16 @@ spring:
         max-wait: -1
         min-idle: 0
   datasource:
-    username: rdsroot
-    password: Dataearth2018
-    url: jdbc:mysql://pro.rdsmajl7aar4fdc.rds.bd.baidubce.com:3306/api_gateway?useUnicode=true&useSSL=false&characterEncoding=utf8
+    username: qiushi
+    password: 6asdf82GHYh*gh8sl
+    url: jdbc:mysql://localhost:3306/api_gateway?useUnicode=true&useSSL=false&characterEncoding=utf8
   main:
     allow-bean-definition-overriding: true
   cloud:
     nacos:
       discovery:
-        server-addr: nacos-test.autumn.com:80
-        namespace: 53b92db0-0844-4e5c-866a-904a20b2e462
+        server-addr: 127.0.0.1:8848
+#        namespace: 53b92db0-0844-4e5c-866a-904a20b2e462
     sentinel:
       transport:
         #dashboard: 172.16.0.59:8080
