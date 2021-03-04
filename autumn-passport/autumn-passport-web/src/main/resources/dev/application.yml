@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: airlook-passport
+  profiles:
+    active: dev
+  datasource:
+    username: airlook_passport
+    password: NJyWiw00KbIIV2G6
+    url: jdbc:mysql://pro.rdsmajl7aar4fdc.rds.bd.baidubce.com:3306/airlook_passport?useUnicode=true&useSSL=false&characterEncoding=utf8
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+          server-addr: nacos-test.airlook.com:80
+  redis:
+    ssl: false
+    database: 0
+    host: 106.12.151.69
+    password: dataearth
+    port: 16379
+    timeout: 500ms
+
+mybatis-plus:
+  global-config:
+    banner: false

@@ -535,5 +535,12 @@
         </plugins>
     </build>
 
+    <distributionManagement>
+        <snapshotRepository>
+            <id>github</id>
+            <name>qiushi-autumn</name>
+            <url>https://maven.pkg.github.com/qsqiushi/autumn</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>

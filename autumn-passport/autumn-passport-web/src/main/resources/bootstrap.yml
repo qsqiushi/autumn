@@ -1,0 +1,46 @@
+server:
+  port: 8380
+spring:
+  application:
+    name: autumn-passport
+
+#请求处理的超时时间
+ribbon:
+  ReadTimeout: 12000
+  #请求连接的超时时间
+  ConnectTimeout: 3000
+
+feign:
+  httpclient:
+    enabled: true
+  hystrix:
+    enabled: true
+  client:
+    config:
+      default:
+        connect-timeout: 3000
+        read-timeout: 6000
+
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          #如果enabled设置为false，则请求超时交给ribbon控制
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+
+#airlook component config
+autumn:
+  component:
+    basePackage: com.autumn
+
+# 指定枚举所在位置
+mybatis-plus:
+  typeAliasesPackage: com.*.*.entity
+  typeEnumsPackage: com.*.*.enums
+
+logging:
+  config: classpath:log4j2-spring.xml

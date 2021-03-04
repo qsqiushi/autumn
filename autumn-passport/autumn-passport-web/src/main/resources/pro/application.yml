@@ -1,0 +1,32 @@
+spring:
+  profiles:
+    active: pro
+  application:
+    name: airlook-passport
+  datasource:
+    username: airlook_passport
+    password: M4UbVaIV8yeu
+    url: jdbc:mysql://10.10.3.16:6446/airlook_passport?useUnicode=true&useSSL=false&characterEncoding=utf8&allowPublicKeyRetrieval=true
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 10.10.3.54:18848,10.10.3.55:18848,10.10.3.56:18848
+        namespace: 63906d05-5339-4c2f-8614-1ae786aacaeb
+  redis:
+    ssl: false
+    cluster:
+      nodes:
+        - 10.10.3.10:16379
+        - 10.10.3.11:16379
+        - 10.10.3.12:16379
+        - 10.10.3.13:16379
+        - 10.10.3.14:16379
+        - 10.10.3.15:16379
+    password: dataearth
+    timeout: 1000
+
+mybatis-plus:
+  global-config:
+    banner: false

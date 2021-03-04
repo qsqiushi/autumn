@@ -18,6 +18,7 @@
         <module>autumn-utils</module>
         <module>autumn-gateway</module>
         <module>autumn-model</module>
+        <module>autumn-passport</module>
     </modules>
 
     <name>autumn</name>
@@ -95,4 +96,11 @@
     </pluginRepositories>
 
 
+    <distributionManagement>
+        <snapshotRepository>
+            <id>github</id>
+            <name>qiushi-autumn</name>
+            <url>https://maven.pkg.github.com/qsqiushi/autumn</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
