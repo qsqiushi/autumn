@@ -214,7 +214,7 @@ public class OpenApiGatewayFilterFactory
             }
           }
         },
-        2);
+        GateWayConstants.GATEWAY_FILTER_ORDER_OPEN_API_AUTH);
   }
 
   @Override

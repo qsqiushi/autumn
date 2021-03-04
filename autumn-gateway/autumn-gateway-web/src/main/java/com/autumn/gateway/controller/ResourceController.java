@@ -7,8 +7,8 @@ package com.autumn.gateway.controller;
  * @create: 2021-01-12:19:50
  */
 import com.autumn.gateway.dto.ResourceDTO;
-import com.autumn.gateway.enums.BaseStatus;
-import com.autumn.gateway.enums.BaseWhether;
+import com.autumn.gateway.enums.BaseStatusEnum;
+import com.autumn.gateway.enums.BaseWhetherEnum;
 import com.autumn.gateway.service.IDynamicRouteService;
 import com.autumn.gateway.service.IResourceService;
 import lombok.extern.slf4j.Slf4j;
@@ -73,7 +73,7 @@ public class ResourceController {
 
     com.autumn.gateway.entity.Resource resource = resourceService.getById(resourceId);
 
-    if (resource.getDeleted() == BaseWhether.YES || resource.getStatus() == BaseStatus.INVALID) {
+    if (resource.getDeleted() == BaseWhetherEnum.YES || resource.getStatus() == BaseStatusEnum.INVALID) {
       return "error";
     }
 
@@ -87,7 +87,7 @@ public class ResourceController {
 
     com.autumn.gateway.entity.Resource resource = resourceService.getById(resourceId);
 
-    if (resource.getDeleted() == BaseWhether.YES || resource.getStatus() == BaseStatus.INVALID) {
+    if (resource.getDeleted() == BaseWhetherEnum.YES || resource.getStatus() == BaseStatusEnum.INVALID) {
       return "error";
     }
 
@@ -101,7 +101,7 @@ public class ResourceController {
 
     com.autumn.gateway.entity.Resource resource = resourceService.getById(resourceId);
 
-    if (resource.getDeleted() == BaseWhether.YES || resource.getStatus() == BaseStatus.INVALID) {
+    if (resource.getDeleted() == BaseWhetherEnum.YES || resource.getStatus() == BaseStatusEnum.INVALID) {
       return "error";
     }
 

@@ -2,6 +2,7 @@ package com.autumn.gateway.handler.predicate;
 
 import com.autumn.bo.HttpParams;
 import com.autumn.gateway.bo.UserInfo;
+import com.autumn.gateway.common.GateWayConstants;
 import com.autumn.gateway.utils.PredicateHandlerUtils;
 import com.autumn.model.enums.ResultCode;
 import com.autumn.model.web.BaseResponse;
@@ -151,7 +152,7 @@ public class AuthenticationGatewayFilterFactory
             return chain.filter(serverWebExchange);
           }
         },
-        2);
+            GateWayConstants.GATEWAY_FILTER_ORDER_API_AUTH);
   }
 
   //  ShortcutType，该值是枚举类型，分别是

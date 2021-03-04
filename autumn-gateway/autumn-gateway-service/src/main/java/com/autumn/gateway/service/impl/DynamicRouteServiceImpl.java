@@ -27,8 +27,8 @@ import com.autumn.gateway.entity.Config;
 import com.autumn.gateway.entity.ResourceConfig;
 import com.autumn.gateway.entity.ResourceConfigParam;
 import com.autumn.gateway.entity.ResourceGroup;
-import com.autumn.gateway.enums.BaseStatus;
-import com.autumn.gateway.enums.BaseWhether;
+import com.autumn.gateway.enums.BaseStatusEnum;
+import com.autumn.gateway.enums.BaseWhetherEnum;
 import com.autumn.gateway.handler.predicate.AuthenticationGatewayFilterFactory;
 import com.autumn.gateway.mapper.*;
 import com.autumn.gateway.po.ResourceConfigInfo;
@@ -152,8 +152,8 @@ public class DynamicRouteServiceImpl
         resourceMapper.selectList(
             new QueryWrapper<com.autumn.gateway.entity.Resource>()
                 .lambda()
-                .eq(com.autumn.gateway.entity.Resource::getDeleted, BaseWhether.NO)
-                .eq(com.autumn.gateway.entity.Resource::getStatus, BaseStatus.VALID));
+                .eq(com.autumn.gateway.entity.Resource::getDeleted, BaseWhetherEnum.NO)
+                .eq(com.autumn.gateway.entity.Resource::getStatus, BaseStatusEnum.VALID));
 
     Set<ApiDefinition> apiDefinitions = new HashSet<>();
     Set<GatewayFlowRule> gatewayFlowRules = new HashSet<>();
@@ -231,8 +231,8 @@ public class DynamicRouteServiceImpl
               new QueryWrapper<ResourceConfig>()
                   .lambda()
                   .eq(ResourceConfig::getResourceId, resource.getId())
-                  .eq(ResourceConfig::getDeleted, BaseWhether.NO)
-                  .eq(ResourceConfig::getStatus, BaseStatus.VALID));
+                  .eq(ResourceConfig::getDeleted, BaseWhetherEnum.NO)
+                  .eq(ResourceConfig::getStatus, BaseStatusEnum.VALID));
 
       for (ResourceConfigInfo resourceConfigInfo : resourceConfigInfoList) {
         Config config = resourceConfigInfo.getConfig();
@@ -242,8 +242,8 @@ public class DynamicRouteServiceImpl
                 new QueryWrapper<ResourceConfigParam>()
                     .lambda()
                     .eq(ResourceConfigParam::getResourceConfigId, resourceConfigInfo.getId())
-                    .eq(ResourceConfigParam::getDeleted, BaseWhether.NO)
-                    .eq(ResourceConfigParam::getStatus, BaseStatus.VALID));
+                    .eq(ResourceConfigParam::getDeleted, BaseWhetherEnum.NO)
+                    .eq(ResourceConfigParam::getStatus, BaseStatusEnum.VALID));
 
         switch (resourceConfigInfo.getConfig().getType()) {
           case FILTER:
@@ -525,8 +525,8 @@ public class DynamicRouteServiceImpl
             new QueryWrapper<ResourceConfig>()
                 .lambda()
                 .eq(ResourceConfig::getResourceId, resource.getId())
-                .eq(ResourceConfig::getDeleted, BaseWhether.NO)
-                .eq(ResourceConfig::getStatus, BaseStatus.VALID));
+                .eq(ResourceConfig::getDeleted, BaseWhetherEnum.NO)
+                .eq(ResourceConfig::getStatus, BaseStatusEnum.VALID));
 
     for (ResourceConfigInfo resourceConfigInfo : resourceConfigInfoList) {
       Config config = resourceConfigInfo.getConfig();
@@ -536,8 +536,8 @@ public class DynamicRouteServiceImpl
               new QueryWrapper<ResourceConfigParam>()
                   .lambda()
                   .eq(ResourceConfigParam::getResourceConfigId, resourceConfigInfo.getId())
-                  .eq(ResourceConfigParam::getDeleted, BaseWhether.NO)
-                  .eq(ResourceConfigParam::getStatus, BaseStatus.VALID));
+                  .eq(ResourceConfigParam::getDeleted, BaseWhetherEnum.NO)
+                  .eq(ResourceConfigParam::getStatus, BaseStatusEnum.VALID));
 
       switch (resourceConfigInfo.getConfig().getType()) {
         case FILTER:

@@ -1,6 +1,6 @@
 package com.autumn.gateway.entity;
 
-import com.autumn.gateway.enums.ConfigType;
+import com.autumn.gateway.enums.ConfigTypeEnum;
 import com.baomidou.mybatisplus.annotation.EnumValue;
 import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
@@ -25,5 +25,5 @@ public class Config extends BasePO {
   /** PREDICATE 和 FILTER */
   @EnumValue
   @TableField("TYPE")
-  private ConfigType type;
+  private ConfigTypeEnum type;
 }

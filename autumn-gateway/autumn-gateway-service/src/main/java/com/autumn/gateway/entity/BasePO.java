@@ -1,7 +1,7 @@
 package com.autumn.gateway.entity;
 
-import com.autumn.gateway.enums.BaseStatus;
-import com.autumn.gateway.enums.BaseWhether;
+import com.autumn.gateway.enums.BaseStatusEnum;
+import com.autumn.gateway.enums.BaseWhetherEnum;
 import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -46,12 +46,12 @@ public class BasePO implements Serializable {
    */
   @EnumValue
   @TableField("DELETED")
-  private BaseWhether deleted;
+  private BaseWhetherEnum deleted;
 
   /** 状态 */
   @EnumValue
   @TableField("STATUS")
-  private BaseStatus status;
+  private BaseStatusEnum status;
 
   @Version
   @TableField("VERSION")

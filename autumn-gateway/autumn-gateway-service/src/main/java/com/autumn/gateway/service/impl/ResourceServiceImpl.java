@@ -1,9 +1,9 @@
 package com.autumn.gateway.service.impl;
 
 import com.autumn.gateway.entity.*;
-import com.autumn.gateway.enums.BaseStatus;
-import com.autumn.gateway.enums.BaseWhether;
-import com.autumn.gateway.enums.ConfigType;
+import com.autumn.gateway.enums.BaseStatusEnum;
+import com.autumn.gateway.enums.BaseWhetherEnum;
+import com.autumn.gateway.enums.ConfigTypeEnum;
 import com.autumn.gateway.mapper.*;
 import com.autumn.gateway.service.IResourceService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -48,7 +48,7 @@ public class ResourceServiceImpl extends ServiceImpl<ResourceMapper, Resource>
 
     for (Map<String, String> param : params) {
 
-      ConfigType configType = ConfigType.getByCode(param.get("configType"));
+      ConfigTypeEnum configType = ConfigTypeEnum.getByCode(param.get("configType"));
 
       if (configType == null) {
         continue;
@@ -60,8 +60,8 @@ public class ResourceServiceImpl extends ServiceImpl<ResourceMapper, Resource>
                   .lambda()
                   .eq(Config::getType, configType)
                   .eq(Config::getCode, param.get("configCode"))
-                  .eq(Config::getStatus, BaseStatus.VALID)
-                  .eq(Config::getDeleted, BaseWhether.NO));
+                  .eq(Config::getStatus, BaseStatusEnum.VALID)
+                  .eq(Config::getDeleted, BaseWhetherEnum.NO));
 
       if (config == null) {
         continue;
@@ -71,8 +71,8 @@ public class ResourceServiceImpl extends ServiceImpl<ResourceMapper, Resource>
           resourceConfigMapper.selectOne(
               new QueryWrapper<ResourceConfig>()
                   .lambda()
-                  .eq(ResourceConfig::getStatus, BaseStatus.VALID)
-                  .eq(ResourceConfig::getDeleted, BaseWhether.NO)
+                  .eq(ResourceConfig::getStatus, BaseStatusEnum.VALID)
+                  .eq(ResourceConfig::getDeleted, BaseWhetherEnum.NO)
                   .eq(ResourceConfig::getConfigId, config.getId())
                   .eq(ResourceConfig::getResourceId, resource.getId()));
 
@@ -98,8 +98,8 @@ public class ResourceServiceImpl extends ServiceImpl<ResourceMapper, Resource>
                     .lambda()
                     .eq(ConfigParam::getCode, key)
                     .eq(ConfigParam::getConfigId, config.getId())
-                    .eq(ConfigParam::getStatus, BaseStatus.VALID)
-                    .eq(ConfigParam::getDeleted, BaseWhether.NO));
+                    .eq(ConfigParam::getStatus, BaseStatusEnum.VALID)
+                    .eq(ConfigParam::getDeleted, BaseWhetherEnum.NO));
         if (configParam == null) {
           continue;
         }
@@ -108,8 +108,8 @@ public class ResourceServiceImpl extends ServiceImpl<ResourceMapper, Resource>
             resourceConfigParamMapper.selectOne(
                 new QueryWrapper<ResourceConfigParam>()
                     .lambda()
-                    .eq(ResourceConfigParam::getStatus, BaseStatus.VALID)
-                    .eq(ResourceConfigParam::getDeleted, BaseWhether.NO)
+                    .eq(ResourceConfigParam::getStatus, BaseStatusEnum.VALID)
+                    .eq(ResourceConfigParam::getDeleted, BaseWhetherEnum.NO)
                     .eq(ResourceConfigParam::getConfigParamId, configParam.getId())
                     .eq(ResourceConfigParam::getResourceConfigId, resourceConfig.getId()));
 

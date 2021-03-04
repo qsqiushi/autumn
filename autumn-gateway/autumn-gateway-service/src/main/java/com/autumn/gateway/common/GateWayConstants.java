@@ -17,4 +17,18 @@ public class GateWayConstants {
 
   /** open api 请求 有效时长 毫秒 */
   public static final Long OPEN_API_REQUEST_ACTIVE_TIME = new Long(1000 * 60 * 5);
+
+  /** 内存缓存beanName */
+  public static final String MEMORY_CACHE_BEAN_NAME = "strCache";
+
+  /** 缓存响应结果的过滤器顺序 */
+  public static final Integer GATEWAY_FILTER_ORDER_CACHE_RESPONSE = -2;
+
+  /** 响应缓存作为结果的过滤器顺序 */
+  public static final Integer GATEWAY_FILTER_ORDER_RESPOND_CACHE = -3;
+
+  /** open api 鉴权过滤器顺序 */
+  public static final Integer GATEWAY_FILTER_ORDER_OPEN_API_AUTH = -4;
+  /** 鉴权过滤器顺序 */
+  public static final Integer GATEWAY_FILTER_ORDER_API_AUTH = -4;
 }

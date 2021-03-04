@@ -29,7 +29,7 @@ spring:
   datasource:
     username: qiushi
     password: 6asdf82GHYh*gh8sl
-    url: jdbc:mysql://localhost:3306/api_gateway?useUnicode=true&useSSL=false&characterEncoding=utf8
+    url: jdbc:mysql://localhost:3306/api_gateway?useUnicode=true&useSSL=false&characterEncoding=utf8&allowPublicKeyRetrieval=true
   main:
     allow-bean-definition-overriding: true
   cloud:

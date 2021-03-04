@@ -6,26 +6,26 @@ import lombok.Getter;
 
 /**
  * @program: map-dev
- * @description: 接触类枚举 是否
+ * @description: 基础类状态枚举
  * @author: qiushi
- * @create: 2019-06-17:14:52
+ * @create: 2019-06-17:14:32
  */
 @Getter
-public enum BaseWhether implements CommonEnum<BaseWhether> {
-  NO(0, "否"),
+public enum BaseStatusEnum implements CommonEnum<BaseStatusEnum> {
+  VALID(0, "有效"),
 
-  YES(1, "是");
+  INVALID(1, "无效");
   @EnumValue private final int code;
 
   private final String name;
 
-  BaseWhether(int code, String name) {
+  BaseStatusEnum(int code, String name) {
     this.code = code;
     this.name = name;
   }
 
-  public static BaseWhether getByCode(int code) {
-    for (BaseWhether temp : BaseWhether.values()) {
+  public static BaseStatusEnum getByCode(int code) {
+    for (BaseStatusEnum temp : BaseStatusEnum.values()) {
       if (temp.getCode() == code) {
         return temp;
       }

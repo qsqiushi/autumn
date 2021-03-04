@@ -11,7 +11,7 @@ import org.apache.commons.lang3.StringUtils;
  * @since 2021/1/7 19:22
  */
 @Getter
-public enum ConfigType {
+public enum ConfigTypeEnum {
   FILTER("FILTER", "过滤器"),
 
   PREDICATE("PREDICATE", "断言"),
@@ -27,13 +27,13 @@ public enum ConfigType {
 
   private final String name;
 
-  ConfigType(String code, String name) {
+  ConfigTypeEnum(String code, String name) {
     this.code = code;
     this.name = name;
   }
 
-  public static ConfigType getByCode(String code) {
-    for (ConfigType temp : ConfigType.values()) {
+  public static ConfigTypeEnum getByCode(String code) {
+    for (ConfigTypeEnum temp : ConfigTypeEnum.values()) {
       if (StringUtils.equals(temp.getCode(), code)) {
         return temp;
       }
