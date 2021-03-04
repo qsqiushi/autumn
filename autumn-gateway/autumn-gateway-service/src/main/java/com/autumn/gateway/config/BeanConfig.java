@@ -2,10 +2,10 @@ package com.autumn.gateway.config;
 
 import com.autumn.data.redis.service.RedisService;
 import com.autumn.gateway.common.GateWayConstants;
-import com.autumn.gateway.handler.predicate.AuthenticationGatewayFilterFactory;
-import com.autumn.gateway.handler.predicate.CacheResponseGatewayFilterFactory;
-import com.autumn.gateway.handler.predicate.OpenApiGatewayFilterFactory;
-import com.autumn.gateway.handler.predicate.RespondCacheGatewayFilterFactory;
+import com.autumn.gateway.filter.factory.AuthenticationGatewayFilterFactory;
+import com.autumn.gateway.filter.factory.CacheResponseGatewayFilterFactory;
+import com.autumn.gateway.filter.factory.OpenApiGatewayFilterFactory;
+import com.autumn.gateway.filter.factory.RespondCacheGatewayFilterFactory;
 import com.google.common.cache.Cache;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.springframework.context.annotation.Bean;

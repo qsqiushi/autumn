@@ -1,4 +1,4 @@
-package com.autumn.gateway.handler.predicate;
+package com.autumn.gateway.filter.factory;
 
 import com.autumn.data.redis.service.RedisService;
 import com.autumn.gateway.common.GateWayConstants;

@@ -31,4 +31,7 @@ public class GateWayConstants {
   public static final Integer GATEWAY_FILTER_ORDER_OPEN_API_AUTH = -4;
   /** 鉴权过滤器顺序 */
   public static final Integer GATEWAY_FILTER_ORDER_API_AUTH = -4;
+
+  /** 熔断过滤器顺序 */
+  public static final Integer GATEWAY_FILTER_ORDER_HYSTRIX = -5;
 }

@@ -1,4 +1,4 @@
-package com.autumn.gateway.handler.predicate;
+package com.autumn.gateway.filter.factory;
 
 import com.autumn.bo.HttpParams;
 import com.autumn.gateway.bo.UserInfo;

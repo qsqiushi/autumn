@@ -108,5 +108,14 @@
             <version>2.6</version>
             <scope>compile</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-hystrix -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.reactivex</groupId>
+            <artifactId>rxjava-reactive-streams</artifactId>
+        </dependency>
     </dependencies>
 </project>

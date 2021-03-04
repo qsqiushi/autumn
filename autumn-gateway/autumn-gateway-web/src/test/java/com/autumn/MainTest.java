@@ -1,17 +1,18 @@
 package com.autumn;
 
-import com.autumn.gateway.handler.predicate.AuthenticationGatewayFilterFactory;
-import com.autumn.gateway.handler.predicate.CacheResponseGatewayFilterFactory;
-import com.autumn.gateway.handler.predicate.OpenApiGatewayFilterFactory;
-import com.autumn.gateway.handler.predicate.RespondCacheGatewayFilterFactory;
+import com.autumn.gateway.filter.factory.AuthenticationGatewayFilterFactory;
+import com.autumn.gateway.filter.factory.CacheResponseGatewayFilterFactory;
+import com.autumn.gateway.filter.factory.OpenApiGatewayFilterFactory;
+import com.autumn.gateway.filter.factory.RespondCacheGatewayFilterFactory;
 import com.baomidou.mybatisplus.core.toolkit.IdWorker;
-import com.google.gson.Gson;
 import org.springframework.cloud.gateway.handler.predicate.HeaderRoutePredicateFactory;
 import org.springframework.cloud.gateway.handler.predicate.PathRoutePredicateFactory;
 import org.springframework.cloud.gateway.support.NameUtils;
-import org.springframework.util.StringUtils;
+import reactor.core.publisher.Mono;
+import reactor.core.publisher.MonoSink;
 
 import java.nio.charset.StandardCharsets;
+import java.util.function.Consumer;
 
 /**
  * @program:
@@ -22,6 +23,17 @@ import java.nio.charset.StandardCharsets;
 public class MainTest {
 
   public static void main(String[] args) {
+
+    Mono.create(
+        new Consumer<MonoSink<Void>>() {
+          @Override
+          public void accept(MonoSink<Void> monoSink) {
+
+
+
+          }
+        });
+
     System.out.println(
         NameUtils.normalizeFilterFactoryName(AuthenticationGatewayFilterFactory.class));
 
@@ -40,16 +52,16 @@ public class MainTest {
 
     System.out.println(NameUtils.generateName(2));
 
-
-
     System.out.println(NameUtils.normalizeFilterFactoryName(OpenApiGatewayFilterFactory.class));
 
-    System.out.println(NameUtils.normalizeFilterFactoryName(CacheResponseGatewayFilterFactory.class));
+    System.out.println(
+        NameUtils.normalizeFilterFactoryName(CacheResponseGatewayFilterFactory.class));
 
-    System.out.println(NameUtils.normalizeFilterFactoryName(RespondCacheGatewayFilterFactory.class));
+    System.out.println(
+        NameUtils.normalizeFilterFactoryName(RespondCacheGatewayFilterFactory.class));
 
-
-    CacheResponseGatewayFilterFactory cacheResponseGatewayFilterFactory = new CacheResponseGatewayFilterFactory();
+    CacheResponseGatewayFilterFactory cacheResponseGatewayFilterFactory =
+        new CacheResponseGatewayFilterFactory();
     cacheResponseGatewayFilterFactory.setRedisService(null).setCache(null);
   }
 }

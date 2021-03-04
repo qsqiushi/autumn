@@ -29,7 +29,7 @@ import com.autumn.gateway.entity.ResourceConfigParam;
 import com.autumn.gateway.entity.ResourceGroup;
 import com.autumn.gateway.enums.BaseStatusEnum;
 import com.autumn.gateway.enums.BaseWhetherEnum;
-import com.autumn.gateway.handler.predicate.AuthenticationGatewayFilterFactory;
+import com.autumn.gateway.filter.factory.AuthenticationGatewayFilterFactory;
 import com.autumn.gateway.mapper.*;
 import com.autumn.gateway.po.ResourceConfigInfo;
 import com.autumn.gateway.po.ResourceConfigParamPO;
