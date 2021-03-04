@@ -1,9 +1,6 @@
 package com.autumn;
 
-import com.autumn.gateway.filter.factory.AuthenticationGatewayFilterFactory;
-import com.autumn.gateway.filter.factory.CacheResponseGatewayFilterFactory;
-import com.autumn.gateway.filter.factory.OpenApiGatewayFilterFactory;
-import com.autumn.gateway.filter.factory.RespondCacheGatewayFilterFactory;
+import com.autumn.gateway.filter.factory.*;
 import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 import org.springframework.cloud.gateway.handler.predicate.HeaderRoutePredicateFactory;
 import org.springframework.cloud.gateway.handler.predicate.PathRoutePredicateFactory;
@@ -33,6 +30,10 @@ public class MainTest {
 
           }
         });
+
+
+    System.out.println(
+            NameUtils.normalizeFilterFactoryName(SpecialHystrixGatewayFilterFactory.class));
 
     System.out.println(
         NameUtils.normalizeFilterFactoryName(AuthenticationGatewayFilterFactory.class));

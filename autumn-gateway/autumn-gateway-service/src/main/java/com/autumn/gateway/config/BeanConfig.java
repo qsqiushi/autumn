@@ -2,14 +2,13 @@ package com.autumn.gateway.config;
 
 import com.autumn.data.redis.service.RedisService;
 import com.autumn.gateway.common.GateWayConstants;
-import com.autumn.gateway.filter.factory.AuthenticationGatewayFilterFactory;
-import com.autumn.gateway.filter.factory.CacheResponseGatewayFilterFactory;
-import com.autumn.gateway.filter.factory.OpenApiGatewayFilterFactory;
-import com.autumn.gateway.filter.factory.RespondCacheGatewayFilterFactory;
+import com.autumn.gateway.filter.factory.*;
 import com.google.common.cache.Cache;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.reactive.DispatcherHandler;
 
 import javax.annotation.Resource;
 
@@ -29,6 +28,9 @@ public class BeanConfig {
   @Resource(name = GateWayConstants.MEMORY_CACHE_BEAN_NAME)
   private Cache<String, String> cache;
 
+  @Resource
+  private ObjectProvider<DispatcherHandler> dispatcherHandler;
+
   @Bean
   public AuthenticationGatewayFilterFactory authenticationGatewayFilterFactory() {
     return new AuthenticationGatewayFilterFactory().setHttpClientBuilder(httpClientBuilder);
@@ -47,5 +49,11 @@ public class BeanConfig {
   @Bean
   public RespondCacheGatewayFilterFactory respondCacheGatewayFilterFactory() {
     return new RespondCacheGatewayFilterFactory().setCache(cache).setRedisService(redisService);
+  }
+
+
+  @Bean
+  public SpecialHystrixGatewayFilterFactory specialHystrixGatewayFilterFactory() {
+    return new SpecialHystrixGatewayFilterFactory(dispatcherHandler);
   }
 }

@@ -181,12 +181,17 @@ public class ServiceTest {
     cacheResponseFilterParamMap.put("configType", "FILTER");
     cacheResponseFilterParamMap.put("media", "memory");
 
-
     Map<String, String> respondCacheFilterParamMap = new HashMap<>();
 
     respondCacheFilterParamMap.put("configCode", "RespondCache");
     respondCacheFilterParamMap.put("configType", "FILTER");
 
+    Map<String, String> specialHystrixFilterParamMap = new HashMap<>();
+
+    specialHystrixFilterParamMap.put("configCode", "SpecialHystrix");
+    specialHystrixFilterParamMap.put("configType", "FILTER");
+    specialHystrixFilterParamMap.put("fallbackUri", "forward:/fallback");
+    specialHystrixFilterParamMap.put("timeout", "1000");
 
     dto.setParams(new ArrayList<>());
     dto.getParams().add(stripPrefixParams);
@@ -200,6 +205,8 @@ public class ServiceTest {
     dto.getParams().add(cacheResponseFilterParamMap);
 
     dto.getParams().add(respondCacheFilterParamMap);
+
+    dto.getParams().add(specialHystrixFilterParamMap);
 
     resourceService.saveConfig(resource, dto.getParams());
   }
