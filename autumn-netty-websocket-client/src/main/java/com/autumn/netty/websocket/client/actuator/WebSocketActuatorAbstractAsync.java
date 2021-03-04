@@ -67,7 +67,7 @@ public abstract class WebSocketActuatorAbstractAsync extends WebSocketActuatorBa
     threadPool.execute(
         () -> {
           this.onMessageText(websocket, message);
-          System.gc(); // 回收掉生成的一次性的对象，避免内存泄漏
+          //System.gc(); // 回收掉生成的一次性的对象，避免内存泄漏
         });
   }
 
