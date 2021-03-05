@@ -69,7 +69,7 @@ info:
   #  @project.description@
   #还可以自定义信息
   author: qiushi
-  blog: https://dataearth.autumn.com
+  blog: https://www.autumn.com
 autumn:
   component:
     basePackage: com.autumn
