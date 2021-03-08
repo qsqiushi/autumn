@@ -19,6 +19,7 @@
         <module>autumn-gateway</module>
         <module>autumn-model</module>
         <module>autumn-passport</module>
+        <module>autumn-base-web</module>
     </modules>
 
     <name>autumn</name>
