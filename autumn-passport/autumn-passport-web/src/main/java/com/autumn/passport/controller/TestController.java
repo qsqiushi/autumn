@@ -20,4 +20,11 @@ public class TestController {
     Thread.sleep(500);
     return "success";
   }
+
+  @GetMapping(value = "/test2")
+  public String test2() throws InterruptedException {
+
+    Thread.sleep(500);
+    return "success2";
+  }
 }
