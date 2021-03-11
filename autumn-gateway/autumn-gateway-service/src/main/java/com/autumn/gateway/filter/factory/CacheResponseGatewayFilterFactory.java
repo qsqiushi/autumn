@@ -32,7 +32,7 @@ import java.util.List;
 
 /**
  * @program: autumn
- * @description: 缓存response过滤器工厂
+ * @description: 缓存response过滤器工厂  此处只考虑了url 没有考虑cookies和header产生的影响
  * @author: qiushi
  * @create: 2021-03-03:19:18
  */

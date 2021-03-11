@@ -26,8 +26,8 @@ import java.nio.charset.StandardCharsets;
 
 /**
  * @program: autumn
- * @description: 响应缓存过滤器工厂
- * @author: qius
+ * @description: 响应缓存过滤器工厂 此处只考虑了url 没有考虑cookies和header产生的影响
+ * @author: qiushi
  * @create: 2021-03-03:19:53
  */
 @Slf4j
