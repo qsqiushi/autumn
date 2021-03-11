@@ -116,7 +116,7 @@ public class ServiceTest {
 
     ResourceDTO dto = new ResourceDTO();
 
-    dto.setResourceId("1367001845263773697");
+    dto.setResourceId("1367001845263773698");
     com.autumn.gateway.entity.Resource resource = resourceService.getById(dto.getResourceId());
 
     Map<String, String> stripPrefixParams = new HashMap<>();
@@ -193,6 +193,16 @@ public class ServiceTest {
     specialHystrixFilterParamMap.put("fallbackUri", "forward:/fallback");
     specialHystrixFilterParamMap.put("timeout", "1000");
 
+
+    Map<String, String> balancerParamMap = new HashMap<>();
+
+
+    balancerParamMap.put("configCode", "GrayReactiveLoadBalancerClient");
+    balancerParamMap.put("configType", "FILTER");
+    balancerParamMap.put("mode", "version");
+    balancerParamMap.put("strategies", "10.10.82.12:8380-1.0.0,10.10.82.12:8480-1.0.1");
+
+
     dto.setParams(new ArrayList<>());
     dto.getParams().add(stripPrefixParams);
     dto.getParams().add(hystrixParams);
@@ -207,6 +217,8 @@ public class ServiceTest {
     dto.getParams().add(respondCacheFilterParamMap);
 
     dto.getParams().add(specialHystrixFilterParamMap);
+
+    dto.getParams().add(balancerParamMap);
 
     resourceService.saveConfig(resource, dto.getParams());
   }

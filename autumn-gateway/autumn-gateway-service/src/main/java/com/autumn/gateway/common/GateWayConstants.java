@@ -34,4 +34,10 @@ public class GateWayConstants {
 
   /** 熔断过滤器顺序 */
   public static final Integer GATEWAY_FILTER_ORDER_HYSTRIX = -5;
+
+  /** 权重过滤器顺序 */
+  public static final Integer GATEWAY_FILTER_ORDER_GRAY_REACTIVE_LOAD_BALANCER = 10150;
+
+  /** 权重服务url前置 */
+  public static final String SCHEME_PREFIX = "grayLb";
 }

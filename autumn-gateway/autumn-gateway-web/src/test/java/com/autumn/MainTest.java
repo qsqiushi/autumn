@@ -9,6 +9,10 @@ import reactor.core.publisher.Mono;
 import reactor.core.publisher.MonoSink;
 
 import java.nio.charset.StandardCharsets;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 import java.util.function.Consumer;
 
 /**
@@ -24,16 +28,16 @@ public class MainTest {
     Mono.create(
         new Consumer<MonoSink<Void>>() {
           @Override
-          public void accept(MonoSink<Void> monoSink) {
-
-
-
-          }
+          public void accept(MonoSink<Void> monoSink) {}
         });
 
+    Map<String, String> versionMap = new HashMap<>();
+    versionMap.put("version", "versionNo");
+    final Set<Map.Entry<String, String>> attributes =
+        Collections.unmodifiableSet(versionMap.entrySet());
 
     System.out.println(
-            NameUtils.normalizeFilterFactoryName(SpecialHystrixGatewayFilterFactory.class));
+        NameUtils.normalizeFilterFactoryName(SpecialHystrixGatewayFilterFactory.class));
 
     System.out.println(
         NameUtils.normalizeFilterFactoryName(AuthenticationGatewayFilterFactory.class));
@@ -64,5 +68,9 @@ public class MainTest {
     CacheResponseGatewayFilterFactory cacheResponseGatewayFilterFactory =
         new CacheResponseGatewayFilterFactory();
     cacheResponseGatewayFilterFactory.setRedisService(null).setCache(null);
+
+    System.out.println(
+        NameUtils.normalizeFilterFactoryName(
+            GrayReactiveLoadBalancerClientGatewayFilterFactory.class));
   }
 }

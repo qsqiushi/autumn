@@ -36,7 +36,7 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-#        namespace: 53b92db0-0844-4e5c-866a-904a20b2e462
+    #        namespace: 53b92db0-0844-4e5c-866a-904a20b2e462
     sentinel:
       transport:
         #dashboard: 172.16.0.59:8080
@@ -49,6 +49,9 @@ spring:
           enabled: true
           #使用小写服务名，默认是大写
           lower-case-service-id: true
+
+
+
 #hystrix.command.fallbackcmd.execution.isolation.thread.timeoutInMilliseconds: 5000
 management:
   endpoints:
