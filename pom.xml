@@ -20,6 +20,7 @@
         <module>autumn-model</module>
         <module>autumn-passport</module>
         <module>autumn-base-web</module>
+        <module>autunm-mq-redis</module>
     </modules>
 
     <name>autumn</name>
